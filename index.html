@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadeon Robotics - Deterministic Speed for Industry 5.0</title>
+
+    <style>
+        /* --- PROFESSIONAL STYLES --- */
+
+        /* 1. IMPORT A PROFESSIONAL FONT */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+        /* 2. DEFINE A MODERN COLOR PALETTE */
+        :root {
+            --primary-blue: #0056b3;
+            --primary-blue-light: #e9f5ff;
+            --primary-blue-hover: #004085;
+            --dark-bg: #0f172a; /* Dark Slate Blue */
+            --light-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-light: #e2e8f0;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+            --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-strong: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        /* 3. BASE STYLES */
+        * {
+            box-sizing: border-box; /* <-- ADD THIS LINE */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        main {
+            max-width: 100%;
+            margin: 0;
+            background-color: var(--light-bg);
+            border-radius: 0;
+            box-shadow: none;
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+        h3 {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-top: 0;
+        }
+        h4 {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-top: 0;
+        }
+
+        p, li {
+            line-height: 1.6;
+            font-size: 1.05em;
+        }
+
+        /* --- SECTION STYLES --- */
+        .section-separator {
+            max-width: 1280px;
+            margin: 40px auto;
+            border: none;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* LOGO STYLES */
+        .logo {
+            width: 90%;
+            max-width: 650px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* HEADER & INTRODUCTION */
+        .company-header {
+            max-width: 1000px;
+            margin: 40px auto 30px auto;
+            padding: 0 20px;
+        }
+        .company-header h2 {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-shadow: none;
+        }
+        .company-header p {
+            font-size: 1.2em;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* ROBOTIC ADVANTAGE (PROBLEM/SOLUTION) */
+        .robotic-advantage {
+            max-width: 1280px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .advantage-grid {
+            display: flex;
+            gap: 20px;
+            text-align: left;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .advantage-box {
+            flex: 1;
+            min-width: 300px;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: var(--light-bg);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+            transition: all 0.2s ease-in-out;
+        }
+        .advantage-box:hover {
+            /*transform: translateY(-5px);*/
+            /*box-shadow: var(--shadow-strong);*/
+        }
+        .solution-box {
+            border: 2px solid var(--primary-blue);
+            background-color: var(--primary-blue-light);
+        }
+        .advantage-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .advantage-box p, .advantage-box li {
+            text-align: left;
+            font-size: 1.05em;
+        }
+        .advantage-box li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .advantage-box li:last-child {
+            border-bottom: none;
+        }
+
+        /* CTA BANNER */
+        .cta-banner {
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #ffffff;
+            background-image: linear-gradient(to right, #0062cc, #004085);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.4);
+            transition: all 0.2s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.5);
+        }
+
+        /* TECHNOLOGY & EXPERTISE SECTION */
+        .expertise-section {
+            max-width: 1280px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            background-color: #f9fafb;
+            border-radius: 8px;
+        }
+        .expertise-summary {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 40px;
+            color: var(--primary-blue);
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+        }
+        .features-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .feature-box {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            border-radius: 6px;
+            background-color: var(--light-bg);
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s ease-in-out;
+        }
+        .feature-box:hover {
+            /*transform: translateY(-5px);*/
+            /*box-shadow: var(--shadow-strong);*/
+        }
+        .feature-box p {
+            color: var(--text-muted);
+            font-size: 1.05em;
+            /* text-align removed from this global rule */
+        }
+
+        /* NEW: Centers text ONLY in the "Foundation" boxes */
+        .expertise-section .feature-box p {
+            text-align: center;
+        }
+
+        .dev-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-top: 5px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* NEW: Justifies ONLY the dev bio paragraphs */
+        .feature-box p.dev-bio {
+            text-align: left;
+        }
+
+        /* MARKET OPPORTUNITY */
+        .market-opportunity-section {
+            max-width: 1280px;
+            margin: 50px auto;
+            padding: 30px 20px;
+        }
+        .market-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .market-box {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            border-radius: 6px;
+            background-color: #f9fafb;
+            text-align: center;
+        }
+        .market-box-stat {
+            font-size: 2.8em;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+        .market-box p {
+            font-size: 1.1em;
+            color: var(--text-dark);
+            margin: 5px 0 0 0;
+        }
+        .tam-sam-som-list {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 0;
+            list-style: none;
+        }
+        .tam-sam-som-list li {
+            font-size: 1.15em;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .tam-sam-som-list p.market-definition {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            margin: 5px 0 0 0;
+            padding-left: 10px;
+            border-left: 3px solid var(--border-light);
+        }
+
+        .market-summary-note {
+            max-width: 1000px;
+            margin: 30px auto 0 auto;
+            padding: 20px;
+            font-size: 1.0em;
+            color: var(--text-dark);
+            background-color: var(--primary-blue-light);
+            border: 1px dashed var(--primary-blue);
+            border-radius: 5px;
+            text-align: left;
+        }
+        .market-summary-note p {
+            text-align: left;
+            margin: 0;
+        }
+
+
+        /* MARKET ALIGNMENT & EXPANSION */
+        .market-expansion-section {
+            max-width: 100%;
+            margin: 50px auto;
+            padding: 30px 20px;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding-bottom: 30px;
+        }
+        .market-expansion-section h2 {
+            color: #ffffff;
+        }
+        .market-expansion-section h3 {
+            color: #38bdf8;
+            text-align: left;
+            max-width: 1000px;
+            margin: 30px auto 15px auto;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 10px;
+        }
+        .market-expansion-section ul {
+            list-style: disc;
+            padding-left: 20px;
+            text-align: left;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .market-expansion-section li {
+            font-size: 1.15em;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        /* TEAM/FOUNDER SECTION STYLES */
+        .team-section {
+            max-width: 1280px;
+            margin: 50px auto;
+            padding: 30px 20px;
+        }
+        .section-header {
+            margin-bottom: 30px;
+        }
+
+        .team-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto 30px auto;
+        }
+
+        .team-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            flex: 1;
+            min-width: 400px;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: var(--light-bg);
+            box-shadow: var(--shadow-strong);
+            text-align: left;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .team-image-container {
+            flex-shrink: 0;
+        }
+
+        .team-headshot {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            object-position: center bottom;
+            border-radius: 50%;
+            border: 4px solid var(--primary-blue-light);
+        }
+
+        .team-details {
+            flex-grow: 1;
+        }
+
+        .team-details p {
+            text-align: left;
+        }
+
+        .advisors-note {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            font-size: 0.9em;
+            color: var(--text-muted);
+            border: 1px dashed var(--border-light);
+            border-radius: 5px;
+        }
+
+        @media (max-width: 960px) {
+            .team-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: left;
+                min-width: 300px;
+            }
+            .team-details p {
+                text-align: left;
+            }
+        }
+
+        /* NEW: Styling for Development Team Headshots */
+        .dev-headshot {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 50%;
+            border: 3px solid var(--primary-blue-light);
+            margin-bottom: 15px; /* Space between image and text */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Adjust feature-box for dev images to center them */
+        .features-grid .feature-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+            text-align: center;  /* Center text within the box */
+        }
+        /* Ensure text is left-aligned within dev bios */
+        /*.features-grid .feature-box p {*/
+        /*    text-align: center;*/
+        /*}*/
+
+        /* --- ROADMAP STYLES --- */
+        .roadmap-section {
+            max-width: 1280px;
+            margin: 50px auto;
+            padding: 30px 20px;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background-color: var(--border-light);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .timeline-item.is-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 40px;
+            text-align: right;
+            left: 0;
+        }
+        .timeline-item:nth-child(even) {
+            padding-left: 40px;
+            text-align: left;
+            left: 50%;
+        }
+
+        .timeline-year {
+            position: absolute;
+            top: 30px;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #ffffff;
+            background-color: var(--primary-blue);
+            border-radius: 50%;
+            border: 4px solid var(--light-bg);
+            box-shadow: 0 0 0 4px var(--primary-blue);
+            z-index: 10;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: -40px;
+            transform: translateX(50%);
+        }
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -40px;
+            transform: translateX(-50%);
+        }
+
+        .timeline-content {
+            padding: 25px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .timeline-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+            text-align: left;
+        }
+
+        .timeline-content li {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Roadmap Media Query for Mobile */
+        @media (max-width: 768px) {
+            .timeline-container::before {
+                left: 40px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-left: 70px;
+                text-align: left;
+            }
+
+            .timeline-year {
+                top: 25px;
+                left: 0;
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+                font-size: 1.2em;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: 40px;
+                transform: translateX(-50%);
+            }
+        }
+        /* --- END ROADMAP STYLES --- */
+
+
+        /* CONTACT FOOTER */
+        .contact-footer {
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.9em;
+            color: var(--text-muted);
+        }
+        .contact-footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        .contact-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <img src="images/HadeonLogo.svg" alt="Hadeon Robotics Logo" class="logo">
+
+    <section class="company-header">
+        <h2>Deterministic Speed: Powering Industry 5.0 & Human-Robot Collaboration</h2>
+        <p>
+            <strong>Hadeon Robotics</strong> is accelerating the transition to <strong>Industry 5.0</strong> by enabling resilient, human-centric processes. Our advanced trajectory optimization and deterministic software bridge the gap between complex machine operations and the human workforce, enabling true <strong>Human-Robot Collaboration (HRC)</strong> in fenceless environments.
+        </p>
+    </section>
+    <hr class="section-separator">
+
+    <section class="robotic-advantage">
+        <h2>Solving the Core Robotics Gap & Skilled Labor Shortage</h2>
+
+        <div class="advantage-grid">
+            <div class="advantage-box">
+                <h3>The Industry Constraint (The Problem)</h3>
+                <p>
+                    Current robot integration is costly (<strong>$30K–$120K</strong> average per robot) and slow (<strong>2–8 weeks</strong> to production). This high barrier to entry is compounded by:
+                </p>
+                <ul>
+                    <li><strong>Skilled Labor Crisis:</strong> Over <strong>52% of integrators</strong> still rely on manual programming and proprietary languages, creating a major bottleneck.</li>
+                    <li><strong>Legacy Systems:</strong> Integrating new robots with existing legacy systems remains a complex, time-consuming, and expensive hindrance to adoption.</li>
+                    <li><strong>Reactive Safety:</strong> Most collision avoidance is reactive (stopping), not predictive, which limits true Human-Robot Collaboration.</li>
+                </ul>
+            </div>
+
+            <div class="advantage-box solution-box">
+                <h3>The Hadeon Solution: Immediate Value for Integrators & SMEs</h3>
+                <p>
+                    Hadeon provides a unified software solution that delivers immediate, measurable value for integrators and small/medium-sized enterprises (SMEs).
+                </p>
+                <ul>
+                    <li>
+                        <strong>Faster Programming:</strong> Automated trajectory generation cuts setup time by <strong>up to 90%</strong> (from weeks to <strong>1-2 days</strong>).
+                    </li>
+                    <li>
+                        <strong>Dynamic HRC Safety:</strong> Predictive, model-based collision avoidance delivers <strong>35% shorter, safer paths</strong>, enabling workers and machines to operate side-by-side.
+                    </li>
+                    <li>
+                        <strong>Lower Costs:</strong> Our plug-and-play integration enables <strong>80% faster deployment and 50% lower integration costs</strong>, generating up to <strong>$120K in value</strong> per typical customer.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="cta-banner">
+        <a href="mailto:info@hadeon.com" class="cta-button">Request a Consultation & Calculate Your $120K Value</a>
+    </section>
+    <hr class="section-separator">
+
+    <section class="expertise-section">
+        <h2>Our Foundation: Deterministic Optimization</h2>
+
+        <p class="expertise-summary">
+            Hadeon Robotics is built on cutting-edge PhD research in robotics and optimization. Our <strong>model-based approach</strong> provides <strong>guaranteed, consistent performance</strong> and <strong>reliable</strong>, sub-second trajectories—bypassing the <strong>unpredictability of AI/ML</strong> for safety-critical HRC settings.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <h4>Expert Robotics, No Experts Required</h4>
+                <p>Our <strong>no-code</strong> solution bypasses the need for specialized robot programming knowledge, directly addressing a key industry challenge: <strong>lack of employee training</strong>.</p>
+            </div>
+            <div class="feature-box">
+                <h4>Real-time Optimization</h4>
+                <p>Compute <strong>near-optimal trajectory</strong> in <strong>milliseconds</strong> for dynamic industrial environments, ensuring reliable, high-precision results for complex tasks.</p>
+            </div>
+            <div class="feature-box">
+                <h4>Vendor Independent</h4>
+                <p>Plug-and-play integration across major robot brands and SDKs, including <strong>Kinova, Fanuc, Universal Robots, and Yaskawa</strong>.</p>
+            </div>
+        </div>
+    </section>
+    <hr class="section-separator">
+
+    <section class="market-opportunity-section">
+        <h2>Market Opportunity: The Software-Defined Shift</h2>
+        <div class="market-grid">
+            <div class="market-box">
+                <p class="market-box-stat">11.3%</p>
+                <p>Industrial Market CAGR (to $39.3B by 2026)</p>
+            </div>
+            <div class="market-box">
+                <p class="market-box-stat">25.6%</p>
+                <p>Cobot Market CAGR (Highest Growth Segment)</p>
+            </div>
+            <div class="market-box">
+                <p class="market-box-stat">43%</p>
+                <p>of Robotics Startups are Software-Focused</p>
+            </div>
+        </div>
+
+        <h3>Our Addressable Market (2026 Forecast)</h3>
+
+        <ul class="tam-sam-som-list">
+            <li>
+                <strong>TAM (Total Addressable Market):</strong> <strong>$39.34 Billion</strong>
+                <p class="market-definition">The total global industrial robotics hardware market where our software is applicable.</p>
+            </li>
+            <li>
+                <strong>SAM (Serviceable Available Market):</strong> <strong>$2.73 Billion</strong>
+                <p class="market-definition">Our immediate target: the optimization software 'slice' (est. 21%) within the core NA & EU industrial hardware markets ($13.0B).</p>
+            </li>
+            <li>
+                <strong>SOM (Serviceable Obtainable Market):</strong> <strong>$54.6M – $136.5M</strong>
+                <p class="market-definition">Our credible 3-5 year goal, representing an aggressive 2-5% market share capture of the serviceable software market (SAM).</p>
+            </li>
+        </ul>
+
+        <div class="market-summary-note">
+            <p>This SOM (<strong>$54.6M – $136.5M</strong>) represents a credible, high-growth plan. It is grounded in capturing <strong>2-5% of the software market (SAM)</strong> through high-volume RaaS and enterprise deployments, each generating up to <strong>$120,000 in operational value</strong> for our customers.</p>
+        </div>
+
+    </section>
+
+    <hr class="section-separator">
+
+    <section class="market-expansion-section">
+        <h2>Market Alignment & Expansion</h2>
+
+        <h3>Our Core Market: SMEs & Integrators</h3>
+        <ul>
+            <li>
+                <strong>Software is the Differentiator:</strong> While hardware dominates industrial robotics budgets, <strong>software provides the largest value differentiator</strong> and market opportunity for emerging startups.
+            </li>
+            <li>
+                <strong>RaaS Enabler:</strong> Our easy deployment and lower upfront costs are key to driving the <strong>Robots-as-a-Service (RaaS) model</strong>, allowing SMEs to shift from high <strong>CAPEX to OPEX</strong>.
+            </li>
+            <li>
+                <strong>Addressing Legacy Systems:</strong> Our plug-and-play integration directly solves the high initial costs and complexity of integrating robotics with <strong>legacy systems</strong>.
+            </li>
+        </ul>
+
+        <h3>Our Expansion: Unlocking Service Robotics</h3>
+        <ul>
+            <li>
+                <strong>The Next Frontier:</strong> Our deterministic HRC safety is the critical lever to unlock the <strong>$230.26 Billion Professional and Personal Service Robot market</strong>.
+            </li>
+            <li>
+                <strong>New Verticals:</strong> This technology enables high-precision tasks in new sectors like <strong>Healthcare</strong> (surgical procedures, therapy), <strong>Logistics</strong> (AMR navigation), and <strong>Agriculture</strong> (fruit picking).
+            </li>
+        </ul>
+    </section>
+
+    <section class="team-section">
+        <div class="section-header">
+            <h2>Meet Our Team</h2>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-image-container">
+                    <img src="images/nikos_headshot.jpeg" alt="Nikos Doiron Headshot" class="team-headshot">
+                </div>
+                <div class="team-details">
+                    <h3>Nikos Doiron, Founder & CEO</h3>
+                    <p><strong>Core Expertise:</strong> PhD candidate in Applied Sciences (Robotics, Optimization).</p>
+                    <p>As Founder & CEO, Nikos is dedicated to advancing industrial and collaborative robotics by integrating cutting-edge research with practical applications, delivering innovative software solutions that enhance efficiency and minimize downtime.</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image-container">
+                    <img src="images/andre_headshot.jpeg" alt="Andre Gallant Headshot" class="team-headshot">
+                </div>
+                <div class="team-details">
+                    <h3>André Gallant</h3>
+                    <p><strong>Lead Scientific Advisor & Research Partner</strong></p>
+                    <p>Assistant Professor at Université de Moncton and Director of the Dynamium research laboratory, a center for innovative robotic solutions. He is a leading expert in mechanical engineering, robotics, and mechatronics.</p>
+                    <p>His research focuses on motion planning, kinematic design, and dynamics, and he leads a team of researchers testing robot technology for complex tasks in challenging environments.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 50px; border-top: 1px solid var(--border-light); padding-top: 50px;">
+            <h3>Core Development Team</h3>
+        </div>
+
+        <div class="features-grid" style="max-width: 1000px; margin: 0 auto;">
+            <div class="feature-box">
+                <img src="images/thomas_headshot.jpeg" alt="Thomas Duquette Headshot" class="dev-headshot">
+                <h3>Thomas Duquette</h3>
+                <p class="dev-title">Robotics Software Developer & Researcher</p>
+
+                <p class="dev-bio"><strong>Core Expertise:</strong> PhD candidate (Collision Avoidance, Optimization)</p>
+                <p class="dev-bio">Thomas is a core developer at Dynamium, building and validating the state-of-the-art collision avoidance algorithms that Hadeon integrates into its enterprise solutions. His PhD research is central to ensuring this core technology is robust, reliable, and ready for real-world industrial applications.</p>
+            </div>
+
+            <div class="feature-box">
+                <img src="images/mario_headshot.jpeg" alt="Mario Dandurand Headshot" class="dev-headshot">
+                <h3>Mario Dandurand</h3>
+                <p class="dev-title">Robotics Software Developer & Researcher</p>
+
+                <p class="dev-bio"><strong>Core Expertise:</strong> Master's student (Motion Prediction, Dynamics)</p>
+                <p class="dev-bio">Mario's research at Dynamium focuses on state-of-the-art motion prediction, a critical component for safe Human-Robot Collaboration. Funded by Hadeon's Mitacs BSI grant, his work directly enables our enterprise platform to anticipate the movement of dynamic obstacles in real-time.</p>
+            </div>
+        </div>
+
+        <div class="advisors-note" style="margin-top: 40px;">
+            <p>
+                We are backed by <strong>seasoned roboticists, optimization experts, and industry veterans</strong>. They provide crucial support, including <strong>business mentorship</strong> from partners like <strong>Venn Innovation</strong> and <strong>technology validation</strong> from leading industry companies.
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-separator">
+
+    <section class="roadmap-section">
+
+        <div class="section-header">
+            <h2>Our Journey So Far</h2>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <h3>Foundation & Strategic Alliances</h3>
+                    <ul>
+                        <li><strong>Selected for</strong> the Venn Innovation Garage, gaining strategic mentorship & resources.</li>
+                        <li><strong>Officially Incorporated</strong>, establishing the legal and commercial foundation.</li>
+                        <li><strong>Forms key R&D partnership</strong> with Dynamium Lab, securing advanced test facilities and a talent pipeline for Atlantic roboticists.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content">
+                    <h3>Major Funding & Market Validation</h3>
+                    <ul>
+                        <li><strong>Secures $195,000 in total R&D funding</strong> from Mitacs (Accelerate & BSI) to build out the core development team.</li>
+                        <li><strong>Core technology academically validated</strong> with submission to the prestigious ICRA conference.</li>
+                        <li><strong>Secures pilot agreements</strong> with key industry early adopters (OEM & Integrator), validating the commercial need.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 50px;">
+            <h2>What's Next</h2>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-year">2026</div>
+                <div class="timeline-content">
+                    <h3>Go-to-Market & Industry Proof</h3>
+                    <ul>
+                        <li><span class="prefix"><strong> Q1:</strong></span> Forms Scientific Advisory Board of world-renowned robotics experts.</li>
+                        <li><span class="prefix"><strong> Q1:</strong></span> Launches Enterprise Platform v1.0 alongside our "Open-Core" strategy to drive market adoption.</li>
+                        <li><span class="prefix"><strong> Q2:</strong></span> Deploys v1.0 enterprise pilots with a leading robot OEM and key systems integrator to prove real-world performance.</li>
+                        <li><span class="prefix"><strong> June:</strong></span> Presents platform & pilot data at ICRA 2026, showcasing our technology to the global robotics community.</li>
+                        <li><span class="prefix"><strong> Q3:</strong></span> Refine Enterprise Platform (v1.1), integrating real-world feedback from active pilot deployments.</li>
+                        <li><span class="prefix"><strong> Q4:</strong></span> Successfully conclude pilot phase, validating core ROI metrics and commencing first commercial contract negotiations.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2027</div>
+                <div class="timeline-content">
+                    <h3>Commercial Launch & Revenue</h3>
+                    <ul>
+                        <li><strong>Q1:</strong> Publishes public ROI case studies from successful pilot projects, creating powerful sales assets.</li>
+                        <li><strong>Q2:</strong> Signs first multi-year commercial contracts, converting pilot partners into long-term enterprise clients.</li>
+                        <li><strong>Q3:</strong> Launches Enterprise Platform v2.0, incorporating all pilot-program learnings for a market-ready product.</li>
+                        <li><strong>Q4:</strong> Scales commercial pipeline to the first 3-5 new strategic enterprise clients.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2028</div>
+                <div class="timeline-content">
+                    <h3>Global Scaling & Ecosystem</h3>
+                    <ul>
+                        <li><strong>Establishes international presence</strong> by securing the first flagship enterprise client in the European market.</li>
+                        <li><strong>Launches "Hadeon Certified Partner Program"</strong> to scale sales & deployment globally through a certified integrator network.</li>
+                        <li><strong>Secures a strategic technology alliance</strong>, integrating our platform with a major cloud or hardware provider.</li>
+                        <li><strong>Achieves scalable growth</strong>, scaling to >15 global enterprise clients and proving the ecosystem model.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-separator">
+
+    <section class="contact-footer">
+        <p>For immediate inquiries and project consultations, please contact us at: <a href="mailto:info@hadeon.com">info@hadeon.com</a></p>
+        <p>&copy; 2025 Hadeon Robotics. All Rights Reserved.</p>
+    </section>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-active');
+                } else {
+                    // If it's NOT in view, remove the class so it can re-animate later
+                    entry.target.classList.remove('is-active');
+                }
+            });
+        };
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+    });
+</script>
+
+</body>
+</html>
