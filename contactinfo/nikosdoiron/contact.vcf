@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Doiron;Nikos;;;
+FN:Nikos Doiron
+ORG:Hadeon Robotics
+TITLE:CEO & Founder
+TEL;TYPE=WORK,VOICE:+1-506-5304674
+EMAIL;TYPE=WORK,INTERNET:nikos.doiron@hadeonrobotics.com
+URL:https://hadeonrobotics.com
+URL;TYPE=LINKEDIN:https://www.linkedin.com/in/nikos-doiron/
+END:VCARD

@@ -1,0 +1,280 @@
+/* Industry — design-system tokens and component classes, ported from the
+   Claude Design export (temp_claude_design_files/_ds/industry-…/styles.css). */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap');
+
+:root {
+  --color-bg: #f2f2f3;
+  --color-surface: #e9e9ea;
+  --color-text: #1d1f20;
+  --color-accent: #5980a6;
+  --color-accent-2: #728fab;
+  --color-divider: color-mix(in srgb, #1d1f20 16%, transparent);
+
+  --color-neutral-100: #f5f5f8;
+  --color-neutral-200: #e7e7ea;
+  --color-neutral-300: #d4d4d7;
+  --color-neutral-400: #b7b7ba;
+  --color-neutral-500: #98989b;
+  --color-neutral-600: #7a7a7d;
+  --color-neutral-700: #5d5d60;
+  --color-neutral-800: #424244;
+  --color-neutral-900: #2b2b2d;
+
+  --color-accent-100: #eef6ff;
+  --color-accent-200: #d6ebff;
+  --color-accent-300: #b5d9fd;
+  --color-accent-400: #94bce3;
+  --color-accent-500: #749dc4;
+  --color-accent-600: #597ea3;
+  --color-accent-700: #416180;
+  --color-accent-800: #2c455d;
+  --color-accent-900: #1d2d3d;
+
+  --font-heading: "Barlow Condensed", system-ui, sans-serif;
+  --font-heading-weight: 600;
+  --font-body: "Barlow", system-ui, sans-serif;
+
+  --space-1: 3.4px;
+  --space-2: 6.8px;
+  --space-3: 10.2px;
+  --space-4: 13.6px;
+  --space-6: 20.4px;
+  --space-8: 27.2px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 7px;
+
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2b2b2d 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2b2b2d 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2b2b2d 22%, transparent);
+
+  --nav-height: 64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+body {
+  margin: 0; background: var(--color-bg); color: var(--color-text);
+  font-family: var(--font-body); font-size: 18px; line-height: 1.55; font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 48px; }
+h2 { font-size: 40px; }
+h3 { font-size: 30px; }
+h4 { font-size: 23px; }
+h5 { font-size: 19px; }
+h6 { font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 13px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — blueprint frame — */
+.blueprint { position: relative; border: 1px solid var(--color-divider); border-radius: 0; }
+.blueprint.duotone { overflow: visible; }
+.blueprint > .corner {
+  position: absolute; width: 11px; height: 11px;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.blueprint > .corner::before, .blueprint > .corner::after { content: ""; position: absolute; background: currentColor; }
+.blueprint > .corner::before { left: 5px; top: 0; width: 1px; height: 100%; }
+.blueprint > .corner::after  { top: 5px; left: 0; width: 100%; height: 1px; }
+.blueprint > .corner.tl { top: -6px; left: -6px; }
+.blueprint > .corner.tr { top: -6px; right: -6px; }
+.blueprint > .corner.bl { bottom: -6px; left: -6px; }
+.blueprint > .corner.br { bottom: -6px; right: -6px; }
+
+.duotone { position: relative; overflow: hidden; }
+.duotone::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: var(--color-accent); mix-blend-mode: color;
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 16px; line-height: 1.2; color: var(--color-text);
+  background: transparent; border: 1px solid var(--color-divider);
+  padding: var(--space-2) calc(var(--space-3) * 1.2); border-radius: 0;
+}
+.btn-primary { background: var(--color-accent); color: var(--color-bg); border-color: var(--color-accent); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { background: transparent; border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: 0; background: transparent;
+  border: 1px solid var(--color-divider);
+}
+.card-kicker { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700); }
+.card-title { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 20px; line-height: 1.2; }
+.card-body { margin: 0; font-size: 15px; opacity: 0.8; flex: 1; }
+
+/* — tags — */
+.tag { display: inline-flex; align-items: center; font-size: 13px; letter-spacing: 0.02em; padding: 3px 10px; border-radius: 0; }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.table th {
+  text-align: left; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 1px solid var(--color-divider);
+}
+.table td { padding: var(--space-2); border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent); }
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* ══════════════════════════════════════════════════════════════════════
+   Site chrome — header, footer, page shell
+   ══════════════════════════════════════════════════════════════════ */
+.container { max-width: clamp(1180px, 85vw, 1600px); margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); }
+
+header.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-divider);
+}
+.nav-bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px;
+  min-height: var(--nav-height); padding-top: 10px; padding-bottom: 10px;
+}
+.brand { display: flex; align-items: center; gap: 10px; color: var(--color-text); text-decoration: none; margin-right: auto; }
+.brand img { height: 28px; width: auto; }
+.nav-toggle-input { display: none; }
+.nav-hamburger { display: none; }
+.nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; }
+.nav-links a {
+  font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase;
+  font-family: var(--font-heading); color: var(--color-text); text-decoration: none;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--color-accent); }
+.nav-book-demo { padding: 9px 18px; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+
+footer.site-footer {
+  border-top: 1px solid var(--color-divider);
+  background: color-mix(in srgb, var(--color-neutral-200) 55%, transparent);
+}
+.footer-grid {
+  padding: 48px clamp(20px, 4vw, 32px) 28px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: clamp(28px, 4vw, 48px);
+}
+.footer-brand img { height: 26px; width: auto; margin-bottom: 12px; }
+.footer-brand p { margin: 0; font-size: 15px; max-width: 34ch; color: color-mix(in srgb, var(--color-text) 60%, transparent); }
+.footer-heading { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); margin-bottom: 12px; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; font-size: 15px; }
+.footer-links a { color: var(--color-text); text-decoration: none; }
+.footer-links a:hover { color: var(--color-accent); }
+.footer-bottom {
+  padding: 16px clamp(20px, 4vw, 32px) 32px; border-top: 1px solid var(--color-divider);
+  font-size: 14px; color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+
+/* — team (about page) — */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; }
+.team-photo { position: relative; aspect-ratio: 1; }
+.team-photo img { width: 100%; height: 100%; object-fit: cover; }
+.team-name { margin: 16px 0 2px; font-size: 22px; }
+.team-role { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700); }
+.team-bio { margin: 8px 0 0; font-size: 15px; color: color-mix(in srgb, var(--color-text) 65%, transparent); }
+
+/* — news / jobs — */
+.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; }
+.news-card, .job-card { position: relative; padding: 24px; }
+.news-card .news-date { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px; }
+.news-card h3 { font-size: 22px; margin: 0 0 8px; }
+.news-card p { font-size: 16px; color: color-mix(in srgb, var(--color-text) 70%, transparent); margin: 0 0 16px; }
+.news-card .read-more { font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; }
+.post-body { font-size: 19px; line-height: 1.75; color: color-mix(in srgb, var(--color-text) 88%, transparent); }
+.post-body p { margin: 0 0 20px; }
+.post-body strong { color: var(--color-text); }
+.jobs-list { display: flex; flex-direction: column; gap: 16px; }
+.job-card { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+.job-card h3 { font-size: 22px; margin: 0 0 8px; }
+.job-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.job-tag { font-size: 13px; letter-spacing: 0.02em; padding: 3px 10px; border: 1px solid var(--color-accent); color: var(--color-accent); }
+.job-description { font-size: 15px; color: color-mix(in srgb, var(--color-text) 65%, transparent); margin: 0; }
+.empty-state {
+  position: relative; padding: 64px clamp(20px, 4vw, 32px); text-align: center;
+  background: color-mix(in srgb, var(--color-neutral-200) 40%, transparent);
+}
+.empty-state .kicker { font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 10px; }
+.empty-state h3 { margin: 0 0 8px; font-size: 31px; }
+.empty-state p { margin: 0 auto 20px; max-width: 46ch; font-size: 16px; color: color-mix(in srgb, var(--color-text) 65%, transparent); }
+
+/* — hero demo panel (home) — */
+.hero-figure .blueprint { background: color-mix(in srgb, var(--color-neutral-100) 70%, transparent); }
+.hero-figure-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px; border-bottom: 1px solid var(--color-divider);
+}
+.hero-canvas-wrap { position: relative; width: 100%; aspect-ratio: 4/3; cursor: crosshair; }
+.hero-canvas-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-readouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(50%, 120px), 1fr)); border-top: 1px solid var(--color-divider); }
+.hero-readouts > div { padding: 8px 10px; border-right: 1px solid var(--color-divider); }
+.hero-readouts > div:last-child { border-right: none; }
+.hero-readouts .label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 50%, transparent); }
+.hero-readouts .value { font-family: var(--font-heading); font-size: 20px; }
+.hero-controls { display: flex; align-items: center; gap: 8px; padding: 12px; border-top: 1px solid var(--color-divider); }
+.hero-controls .btn { padding: 6px 14px; font-size: 14px; }
+.hero-scenarios { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 12px; border-bottom: 1px solid var(--color-divider); }
+.hero-scenarios .btn { padding: 5px 12px; font-size: 13px; }
+#hero-hint { padding: 0 12px 12px; font-size: 14px; color: color-mix(in srgb, var(--color-text) 60%, transparent); }
+
+/* — divider grid: responsive bordered item row (stats, proof points, roadmap, differentiators) —
+   Uses :first-child/:last-child instead of hardcoded per-item padding so it stays aligned
+   whether the grid renders as N columns or collapses to a single stacked column. */
+.divider-grid { display: grid; }
+.divider-grid > div {
+  padding: var(--gap-pad, 20px);
+  border-left: 1px solid var(--color-divider);
+}
+.divider-grid > div:first-child { border-left: none; padding-left: 0; }
+.divider-grid > div:last-child { padding-right: 0; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   Mobile
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 720px) {
+  .nav-hamburger {
+    display: flex; flex-direction: column; gap: 5px; cursor: pointer;
+    padding: 8px 5px; margin-left: auto;
+  }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--color-text); border-radius: 2px; }
+  .nav-links {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--color-bg); border-bottom: 1px solid var(--color-divider);
+    flex-direction: column; align-items: flex-start; padding: 16px clamp(20px, 4vw, 32px); gap: 14px;
+  }
+  .nav-toggle-input:checked ~ .nav-links { display: flex; }
+  .nav-book-demo { order: 3; }
+
+  .divider-grid > div {
+    border-left: none;
+    border-top: 1px solid var(--color-divider);
+    padding: var(--gap-pad, 20px) 0;
+  }
+  .divider-grid > div:first-child { border-top: none; padding-top: 0; }
+  .divider-grid > div:last-child { padding-bottom: 0; }
+  .divider-grid > div { --dot-x: 0 !important; }
+}

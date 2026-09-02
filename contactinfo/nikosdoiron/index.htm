@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#f2f2f3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Nikos Doiron | Hadeon Robotics</title>
+
+    <link rel="icon" type="image/svg+xml" href="../../images/HadeonLogo.svg">
+    <link rel="apple-touch-icon" href="../../images/HadeonLogo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../../css/styles.css">
+
+    <style>
+        body { display: flex; justify-content: center; padding: clamp(40px, 8vh, 96px) 20px; }
+        .card-container { width: 100%; max-width: 380px; padding: 0 28px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .profile-wrapper { width: 112px; height: 112px; border-radius: 50%; overflow: hidden; margin-top: -56px; margin-bottom: 20px; border: 3px solid var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); background: var(--color-neutral-200); }
+        .profile-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
+        .company-logo { height: 22px; margin: 16px 0 24px; }
+        .qr-wrapper { padding: 12px; border: 1px solid var(--color-divider); margin-bottom: 28px; }
+        .qr-wrapper img { display: block; width: 152px; height: 152px; }
+        .links-grid { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+        .links-grid .btn { width: 100%; padding: 13px; }
+        .links-grid .btn svg { width: 18px; height: 18px; margin-right: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="card-container blueprint">
+    <div class="profile-wrapper">
+        <img src="../../images/nikos_headshot_compressed.jpeg" alt="Nikos Doiron">
+    </div>
+
+    <h1 style="font-size:28px;margin:0">Nikos Doiron</h1>
+    <div style="font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);margin-top:6px">CEO &amp; Founder</div>
+    <img src="../../images/HadeonLogo.svg" alt="Hadeon Robotics" class="company-logo">
+
+    <div class="qr-wrapper">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://hadeonrobotics.com/contactinfo/nikosdoiron/&margin=0" alt="QR Code" loading="lazy">
+    </div>
+
+    <div class="links-grid">
+        <a href="contact.vcf" class="btn btn-primary" download="nikos doiron.vcf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                <polyline points="7 3 7 8 15 8"></polyline>
+            </svg>
+            Save Contact
+        </a>
+
+        <a href="mailto:nikos.doiron@hadeonrobotics.com" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Email Me
+        </a>
+
+        <a href="https://linkedin.com/in/nikos-doiron" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+            </svg>
+            LinkedIn Profile
+        </a>
+
+        <a href="https://hadeonrobotics.com" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            The Motion Engine
+        </a>
+    </div>
+
+    <div style="margin-top:32px;font-size:13px;color:color-mix(in srgb, var(--color-text) 55%, transparent)">Teach goals. Not waypoints.</div>
+    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+</div>
+
+</body>
+</html>

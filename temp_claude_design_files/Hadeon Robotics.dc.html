@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="_ds/industry-1c8a3482-7592-4041-aa6b-eb8d387f8e7d/styles.css">
+<script src="_ds/industry-1c8a3482-7592-4041-aa6b-eb8d387f8e7d/_ds_bundle.js"></script>
+<style>
+body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);}
+a{color:var(--color-accent-700);text-decoration:none;}
+a:hover{color:var(--color-accent-800);}
+</style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--color-bg) 92%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:10px clamp(16px,4vw,32px);display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;min-height:64px">
+      <a href="#" onClick="{{ goHome }}" style="display:flex;align-items:center;gap:10px;color:var(--color-text);text-decoration:none;margin-right:auto">
+        <img src="images/HadeonLogo.svg" alt="Hadeon Robotics" style="height:28px;width:auto">
+      </a>
+      <nav style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px">
+        <a href="#" onClick="{{ navSolutions }}" style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-family:var(--font-heading);color:{{ colSolutions }};text-decoration:none" style-hover="color:var(--color-accent)">Solutions</a>
+        <a href="#" onClick="{{ navAbout }}" style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-family:var(--font-heading);color:{{ colAbout }};text-decoration:none" style-hover="color:var(--color-accent)">About</a>
+        <a href="#" onClick="{{ navNews }}" style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-family:var(--font-heading);color:{{ colNews }};text-decoration:none" style-hover="color:var(--color-accent)">News</a>
+        <a href="#" onClick="{{ navCareers }}" style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-family:var(--font-heading);color:{{ colCareers }};text-decoration:none" style-hover="color:var(--color-accent)">Careers</a>
+      </nav>
+      <a class="btn btn-primary blueprint" href="mailto:info@hadeonrobotics.com?subject=Demo%20Request" style="position:relative;padding:9px 18px;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">
+        Book a demo
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </a>
+    </div>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+
+    <section style="border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:56px 32px 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,56px);align-items:center">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+            <span class="tag tag-outline" style="letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap">Motion engine</span>
+            <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent)">Deterministic · No-code</span>
+          </div>
+          <h1 style="font-size:clamp(46px,5.2vw,72px);line-height:0.98;letter-spacing:-0.02em;margin:0 0 20px;text-wrap:balance">Teach goals.<br>Not waypoints.</h1>
+          <p style="font-size:17px;line-height:1.6;max-width:44ch;margin:0 0 28px;color:color-mix(in srgb, var(--color-text) 78%, transparent)">A deterministic motion engine that plans collision-free, time-optimal trajectories for any manipulator — from a goal, not a program.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px">
+            <a class="btn btn-primary blueprint" href="mailto:info@hadeonrobotics.com?subject=Demo%20Request" style="position:relative;padding:12px 22px;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">
+              Book a demo
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </a>
+            <a class="btn btn-secondary" href="#" onClick="{{ navSolutions }}" style="padding:12px 22px;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Read the spec</a>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(50%,110px),1fr));gap:0;border-top:1px solid var(--color-divider)">
+            <div style="padding:16px 16px 0 0;border-right:1px solid var(--color-divider)">
+              <div style="font-family:var(--font-heading);font-size:30px;line-height:1;color:var(--color-accent-700)">34%</div>
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-top:6px">Cycle time cut<br>Kinova Link6</div>
+            </div>
+            <div style="padding:16px 16px 0;border-right:1px solid var(--color-divider)">
+              <div style="font-family:var(--font-heading);font-size:30px;line-height:1;color:var(--color-accent-700)">&lt;10<span style="font-size:16px">ms</span></div>
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-top:6px">Replan latency<br>per goal</div>
+            </div>
+            <div style="padding:16px 0 0 16px">
+              <div style="font-family:var(--font-heading);font-size:30px;line-height:1;color:var(--color-accent-700)">0</div>
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-top:6px">Taught<br>waypoints</div>
+            </div>
+          </div>
+        </div>
+
+        <figure style="margin:0">
+          <div class="blueprint" style="position:relative;background:color-mix(in srgb, var(--color-neutral-100) 70%, transparent)">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-bottom:1px solid var(--color-divider)">
+              <span style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.12em;text-transform:uppercase">Trajectory optimizer — drag start, goal or obstacles</span>
+              <span ref="{{ statusRef }}" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700)">SOLVING</span>
+            </div>
+            <div ref="{{ wrapRef }}" style="position:relative;width:100%;aspect-ratio:4/3;cursor:crosshair">
+              <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(50%,120px),1fr));border-top:1px solid var(--color-divider)">
+              <div style="padding:8px 10px;border-right:1px solid var(--color-divider)">
+                <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent)">Solve</div>
+                <div ref="{{ tSolveRef }}" style="font-family:var(--font-heading);font-size:17px">—</div>
+              </div>
+              <div style="padding:8px 10px;border-right:1px solid var(--color-divider)">
+                <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent)">Evaluations</div>
+                <div ref="{{ tIterRef }}" style="font-family:var(--font-heading);font-size:17px">—</div>
+              </div>
+              <div style="padding:8px 10px;border-right:1px solid var(--color-divider)">
+                <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent)">Clearance</div>
+                <div ref="{{ tClearRef }}" style="font-family:var(--font-heading);font-size:17px">—</div>
+              </div>
+              <div style="padding:8px 10px">
+                <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent)">Duration</div>
+                <div ref="{{ tErrRef }}" style="font-family:var(--font-heading);font-size:17px">—</div>
+              </div>
+            </div>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+          <figcaption style="display:flex;justify-content:space-between;gap:16px;margin-top:12px">
+            <span>A UR5e planning stop-to-stop between two poses — the problem BLAST solves: a degree-5 B-spline over twelve control points, minimum duration under the UR5e’s velocity and acceleration limits, clearance as a hard constraint. Ported from BLAST’s own formulation; the solver itself is C++.</span>
+            <a href="#" onClick="{{ randomize }}" style="white-space:nowrap;font-family:var(--font-heading);letter-spacing:0.06em;text-transform:uppercase;font-size:11px">↻ New scene</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <sc-if value="{{ showProof }}" hint-placeholder-val="{{ true }}">
+    <section style="border-bottom:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-neutral-200) 45%, transparent)">
+      <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))">
+        <div style="padding:20px 20px 20px 0;border-right:1px solid var(--color-divider)">
+          <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:6px">Validated</div>
+          <div style="font-size:14px;line-height:1.4">34% cycle-time reduction measured on a Kinova Link6 cell</div>
+        </div>
+        <div style="padding:20px;border-right:1px solid var(--color-divider)">
+          <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:6px">Research</div>
+          <div style="font-size:14px;line-height:1.4">Joint algorithm development with Dynamium Lab</div>
+        </div>
+        <div style="padding:20px;border-right:1px solid var(--color-divider)">
+          <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:6px">Open source</div>
+          <div style="font-size:14px;line-height:1.4">Built on <a href="https://github.com/Dynamium-Lab/blast" target="_blank" rel="noopener">BLAST</a>, our co-maintained motion library</div>
+        </div>
+        <div style="padding:20px 0 20px 20px">
+          <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:6px">Published</div>
+          <div style="font-size:14px;line-height:1.4">Peer-reviewed work behind the solver; grant-funded R&amp;D</div>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+
+    <section style="border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:64px clamp(20px,4vw,32px)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(28px,4vw,56px);align-items:start">
+          <div>
+            <h6 style="color:var(--color-accent-700);margin:0 0 10px">The engine</h6>
+            <h2 style="font-size:38px;line-height:1.02;margin:0 0 12px">Four guarantees,<br>not four features.</h2>
+            <p style="font-size:14px;color:color-mix(in srgb, var(--color-text) 65%, transparent);max-width:32ch">Everything below is a property of the math, provable before the robot moves.</p>
+          </div>
+          <div style="border-top:1px solid var(--color-divider)">
+            <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px 24px;padding:20px 0;border-bottom:1px solid var(--color-divider)">
+              <span style="font-family:var(--font-heading);font-size:13px;color:var(--color-accent);letter-spacing:0.08em">01</span>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:8px 24px;align-items:start">
+              <h4 style="margin:0;font-size:20px">Goal-based deployment</h4>
+              <p style="margin:0;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Define the end state. The engine derives kinematics, physics and path. No teaching pendant.</p>
+            </div>
+            </div>
+            <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px 24px;padding:20px 0;border-bottom:1px solid var(--color-divider)">
+              <span style="font-family:var(--font-heading);font-size:13px;color:var(--color-accent);letter-spacing:0.08em">02</span>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:8px 24px;align-items:start">
+              <h4 style="margin:0;font-size:20px">Certifiable safety</h4>
+              <p style="margin:0;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Clearance is a hard constraint in the optimisation — an auditable proof, not a learned behaviour.</p>
+            </div>
+            </div>
+            <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px 24px;padding:20px 0;border-bottom:1px solid var(--color-divider)">
+              <span style="font-family:var(--font-heading);font-size:13px;color:var(--color-accent);letter-spacing:0.08em">03</span>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:8px 24px;align-items:start">
+              <h4 style="margin:0;font-size:20px">Time-optimal motion</h4>
+              <p style="margin:0;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Smooth trajectories at the joint limits. Throughput without post-smoothing passes.</p>
+            </div>
+            </div>
+            <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px 24px;padding:20px 0;border-bottom:1px solid var(--color-divider)">
+              <span style="font-family:var(--font-heading);font-size:13px;color:var(--color-accent);letter-spacing:0.08em">04</span>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:8px 24px;align-items:start">
+              <h4 style="margin:0;font-size:20px">Vendor freedom</h4>
+              <p style="margin:0;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">URDF in, motion out. Move a cell from Fanuc to UR to Kinova without rewriting it.</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-neutral-200) 45%, transparent)">
+      <div style="max-width:1180px;margin:0 auto;padding:64px clamp(20px,4vw,32px)">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:28px">
+          <div>
+            <h6 style="color:var(--color-accent-700);margin:0 0 10px">Comparison</h6>
+            <h2 style="font-size:38px;margin:0">How the engine differs</h2>
+          </div>
+          <p style="margin:0;font-size:14px;max-width:38ch;color:color-mix(in srgb, var(--color-text) 65%, transparent)">Sampling planners trade determinism for coverage. Learned planners trade certifiability for adaptability. We give up neither.</p>
+        </div>
+        <div class="blueprint" style="position:relative;background:var(--color-bg);padding:8px 16px;overflow-x:auto">
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="width:22%">Property</th>
+                <th style="width:26%;color:var(--color-accent-700)">Hadeon</th>
+                <th style="width:26%">Learned planners</th>
+                <th style="width:26%">ROS / MoveIt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:500">Safety logic</td>
+                <td style="color:var(--color-accent-800);font-weight:500;background:var(--color-accent-100)">Deterministic (SQP)</td>
+                <td class="text-muted">Stochastic</td>
+                <td class="text-muted">Sampling-based (OMPL)</td>
+              </tr>
+              <tr>
+                <td style="font-weight:500">Path quality</td>
+                <td style="color:var(--color-accent-800);font-weight:500;background:var(--color-accent-100)">Time-optimal, smooth</td>
+                <td class="text-muted">Often erratic</td>
+                <td class="text-muted">Needs post-smoothing</td>
+              </tr>
+              <tr>
+                <td style="font-weight:500">Setup</td>
+                <td style="color:var(--color-accent-800);font-weight:500;background:var(--color-accent-100)">Scan-to-plan, no code</td>
+                <td class="text-muted">Data collection + training</td>
+                <td class="text-muted">Developer integration</td>
+              </tr>
+              <tr>
+                <td style="font-weight:500">Certifiability</td>
+                <td style="color:var(--color-accent-800);font-weight:500;background:var(--color-accent-100)">High — explainable math</td>
+                <td class="text-muted">Low — hard to validate</td>
+                <td class="text-muted">Variable</td>
+              </tr>
+              <tr>
+                <td style="font-weight:500">Repeatability</td>
+                <td style="color:var(--color-accent-800);font-weight:500;background:var(--color-accent-100)">Bit-identical per input</td>
+                <td class="text-muted">Seed-dependent</td>
+                <td class="text-muted">Seed-dependent</td>
+              </tr>
+            </tbody>
+          </table>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:64px clamp(20px,4vw,32px)">
+        <h6 style="color:var(--color-accent-700);margin:0 0 10px">Solutions</h6>
+        <h2 style="font-size:38px;margin:0 0 28px">Two ways in</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px">
+          <div class="card blueprint" style="position:relative;padding:28px">
+            <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">For system integrators</div>
+            <h3 style="margin:6px 0 10px;font-size:26px">Fixed-bid timelines, dynamic cells</h3>
+            <p style="margin:0 0 18px;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Deploy high-mix cells without the linear cost of manual programming.</p>
+            <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>URDF / CAD / STEP ingest builds the cell model</span></li>
+              <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>Layout changes absorbed without reprogramming</span></li>
+              <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>Scan-to-plan perception as a differentiator</span></li>
+            </ul>
+            <a class="btn btn-secondary" href="mailto:info@hadeonrobotics.com?subject=Integrator%20Partnership%20Inquiry" style="margin-top:auto;align-self:flex-start;padding:10px 18px;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Partner with Hadeon</a>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+          <div class="card blueprint" style="position:relative;padding:28px">
+            <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">For robot OEMs</div>
+            <h3 style="margin:6px 0 10px;font-size:26px">A motion layer from day one</h3>
+            <p style="margin:0 0 18px;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">You built the mechanics. We prove what they can do — without the R&amp;D delay.</p>
+            <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>Show full reach and agility on day one</span></li>
+              <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>Ship with a motion stack that rivals the incumbents</span></li>
+              <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>Time-optimal trajectories as a spec-sheet number</span></li>
+            </ul>
+            <a class="btn btn-secondary" href="mailto:info@hadeonrobotics.com?subject=OEM%20Partnership%20Inquiry" style="margin-top:auto;align-self:flex-start;padding:10px 18px;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Integrate the engine</a>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-neutral-200) 45%, transparent)">
+      <div style="max-width:1180px;margin:0 auto;padding:64px clamp(20px,4vw,32px)">
+        <h6 style="color:var(--color-accent-700);margin:0 0 10px">Roadmap</h6>
+        <h2 style="font-size:38px;margin:0 0 32px">From static cells to shared floors</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));border-top:1px solid var(--color-text)">
+          <div style="padding:24px 24px 0 0;border-right:1px solid var(--color-divider);position:relative">
+            <div style="position:absolute;top:-4px;left:0;width:7px;height:7px;background:var(--color-accent)"></div>
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.16em;color:var(--color-accent-700);margin-bottom:10px">NOW · SHIPPING</div>
+            <h4 style="margin:0 0 8px;font-size:22px">Static scene generation</h4>
+            <p style="margin:0;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Automated trajectory generation and collision avoidance for fixed fixtures.</p>
+          </div>
+          <div style="padding:24px;border-right:1px solid var(--color-divider);position:relative">
+            <div style="position:absolute;top:-4px;left:24px;width:7px;height:7px;border:1px solid var(--color-accent)"></div>
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.16em;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:10px">NEXT · IN DEV</div>
+            <h4 style="margin:0 0 8px;font-size:22px">Dynamic replanning</h4>
+            <p style="margin:0;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Real-time response to moving machinery and live process change.</p>
+          </div>
+          <div style="padding:24px 0 0 24px;position:relative">
+            <div style="position:absolute;top:-4px;left:24px;width:7px;height:7px;border:1px solid color-mix(in srgb, var(--color-text) 40%, transparent)"></div>
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.16em;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:10px">FUTURE · RESEARCH</div>
+            <h4 style="margin:0 0 8px;font-size:22px">Predictive coexistence</h4>
+            <p style="margin:0;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Anticipating human movement for fenceless cells with uninterrupted cycles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--color-accent-900);color:var(--color-bg)">
+      <div style="max-width:1180px;margin:0 auto;padding:72px clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+        <div>
+          <h2 style="font-size:44px;line-height:1.02;margin:0 0 14px;color:var(--color-bg)">Bring us a cell.<br>We'll plan it live.</h2>
+          <p style="margin:0;font-size:16px;color:color-mix(in srgb, #ffffff 72%, transparent);max-width:46ch">Send a URDF or a cell layout. We return a planned, collision-free trajectory and the cycle-time delta — usually within a week.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+          <a class="btn blueprint" href="mailto:info@hadeonrobotics.com?subject=Demo%20Request" style="position:relative;background:var(--color-bg);color:var(--color-accent-900);border-color:var(--color-bg);padding:14px 26px;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">
+            Book a demo
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </a>
+          <span style="font-size:13px;color:color-mix(in srgb, #ffffff 60%, transparent)">or email <a href="mailto:info@hadeonrobotics.com" style="color:var(--color-accent-300)">info@hadeonrobotics.com</a></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isSolutions }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:64px 32px 48px">
+        <h6 style="color:var(--color-accent-700);margin:0 0 12px">Solutions</h6>
+        <h1 style="font-size:clamp(40px,4.6vw,60px);line-height:1;margin:0 0 16px;max-width:20ch">The motion layer between your cell and your robot</h1>
+        <p style="font-size:17px;max-width:56ch;margin:0;color:color-mix(in srgb, var(--color-text) 75%, transparent)">One engine, two entry points: integrators deploying cells, and OEMs shipping hardware that needs motion out of the box.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-neutral-200) 45%, transparent)">
+      <div style="max-width:1180px;margin:0 auto;padding:56px clamp(20px,4vw,32px)">
+        <h2 style="font-size:32px;margin:0 0 24px">Deployment sequence</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:24px">
+          <div style="border-top:1px solid var(--color-text);padding-top:14px">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.14em;color:var(--color-accent);margin-bottom:8px">STEP 01</div>
+            <h4 style="margin:0 0 6px;font-size:19px">Ingest</h4>
+            <p style="margin:0;font-size:13px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">URDF, CAD or STEP files build the robot and cell model.</p>
+          </div>
+          <div style="border-top:1px solid var(--color-text);padding-top:14px">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.14em;color:var(--color-accent);margin-bottom:8px">STEP 02</div>
+            <h4 style="margin:0 0 6px;font-size:19px">Scan</h4>
+            <p style="margin:0;font-size:13px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Point-cloud capture reconciles the model with the real floor.</p>
+          </div>
+          <div style="border-top:1px solid var(--color-text);padding-top:14px">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.14em;color:var(--color-accent);margin-bottom:8px">STEP 03</div>
+            <h4 style="margin:0 0 6px;font-size:19px">Set goals</h4>
+            <p style="margin:0;font-size:13px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Pick poses and task order. No waypoints, no pendant.</p>
+          </div>
+          <div style="border-top:1px solid var(--color-text);padding-top:14px">
+            <div style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.14em;color:var(--color-accent);margin-bottom:8px">STEP 04</div>
+            <h4 style="margin:0 0 6px;font-size:19px">Execute</h4>
+            <p style="margin:0;font-size:13px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Verified trajectories stream to the controller with clearance proofs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:56px clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px">
+        <div class="card blueprint" style="position:relative;padding:28px">
+          <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">For system integrators</div>
+          <h3 style="margin:6px 0 10px;font-size:26px">Deploy dynamic automation on fixed-bid timelines</h3>
+          <p style="margin:0 0 18px;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Your engineering talent is the constraint. The engine is the force multiplier that removes the linear cost of manual programming from every new cell.</p>
+          <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:12px;font-size:14px">
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Accelerated deployment.</strong> Model generation from existing engineering files.</span></li>
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Adaptive setup.</strong> Client scope changes stop being schedule risk.</span></li>
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Scan-to-plan.</strong> A perception capability competitors quote around.</span></li>
+          </ul>
+          <a class="btn btn-primary" href="mailto:info@hadeonrobotics.com?subject=Integrator%20Partnership%20Inquiry" style="align-self:flex-start;padding:11px 20px;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Partner with Hadeon</a>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+        <div class="card blueprint" style="position:relative;padding:28px">
+          <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">For robot OEMs</div>
+          <h3 style="margin:6px 0 10px;font-size:26px">Launch market-ready robots without the R&amp;D delay</h3>
+          <p style="margin:0 0 18px;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">You have built world-class mechanics. We supply the intelligent motion layer that proves the hardware's capability from day one.</p>
+          <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:12px;font-size:14px">
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Instant validation.</strong> Full range and agility, demonstrated immediately.</span></li>
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Market-ready launch.</strong> A motion stack that shortens time-to-market.</span></li>
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Peak performance.</strong> Time-optimal trajectories, measurable on the spec sheet.</span></li>
+          </ul>
+          <a class="btn btn-primary" href="mailto:info@hadeonrobotics.com?subject=OEM%20Partnership%20Inquiry" style="align-self:flex-start;padding:11px 20px;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Integrate the engine</a>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-neutral-200) 45%, transparent)">
+      <div style="max-width:1180px;margin:0 auto;padding:56px clamp(20px,4vw,32px)">
+        <h2 style="font-size:32px;margin:0 0 20px">Interfaces</h2>
+        <div class="blueprint" style="position:relative;background:var(--color-bg);padding:8px 16px;overflow-x:auto">
+          <table class="table">
+            <thead><tr><th style="width:26%">Layer</th><th>Supported today</th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:500">Robot models</td><td class="text-muted">URDF, CAD / STEP import</td></tr>
+              <tr><td style="font-weight:500">Manipulators</td><td class="text-muted">Vendor-agnostic — validated on Kinova Link6; Fanuc and Universal Robots in integration</td></tr>
+              <tr><td style="font-weight:500">Perception</td><td class="text-muted">Point-cloud scan-to-plan for static scenes</td></tr>
+              <tr><td style="font-weight:500">Core library</td><td class="text-muted">BLAST — open-source, co-maintained with Dynamium Lab</td></tr>
+            </tbody>
+          </table>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:64px 32px 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,4vw,56px)">
+        <div>
+          <h6 style="color:var(--color-accent-700);margin:0 0 12px">About</h6>
+          <h1 style="font-size:clamp(40px,4.6vw,60px);line-height:1;margin:0">We are Hadeon</h1>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:24px;padding-top:8px">
+          <div>
+            <h4 style="margin:0 0 6px;font-size:20px">Mission</h4>
+            <p style="margin:0;font-size:15px;color:color-mix(in srgb, var(--color-text) 75%, transparent)">Democratize robotic motion with a no-code engine that makes efficient, safe, robust autonomy available to any robot.</p>
+          </div>
+          <div>
+            <h4 style="margin:0 0 6px;font-size:20px">Vision</h4>
+            <p style="margin:0;font-size:15px;color:color-mix(in srgb, var(--color-text) 75%, transparent)">A world where deploying a robot is as seamless as hiring an expert. A machine that can navigate an orchard, pick ripe fruit and return it to the warehouse — provably safely.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-neutral-200) 45%, transparent)">
+      <div style="max-width:1180px;margin:0 auto;padding:56px clamp(20px,4vw,32px)">
+        <h2 style="font-size:32px;margin:0 0 8px">The problem</h2>
+        <p style="margin:0 0 28px;font-size:15px;max-width:60ch;color:color-mix(in srgb, var(--color-text) 70%, transparent)">The industry is stuck choosing between rigid manual programming and unpredictable AI. Neither scales.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px">
+          <div class="card blueprint" style="position:relative;padding:24px">
+            <div class="card-kicker">01 · Bottleneck</div>
+            <h4 style="margin:2px 0 8px;font-size:20px">Deployment is slow</h4>
+            <p style="margin:0;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Waypoint programming needs expensive experts and breaks when the environment shifts a centimetre.</p>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+          <div class="card blueprint" style="position:relative;padding:24px">
+            <div class="card-kicker">02 · Fragility</div>
+            <h4 style="margin:2px 0 8px;font-size:20px">The world isn't static</h4>
+            <p style="margin:0;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Faced with an unexpected obstacle, a traditional cell either crashes or freezes. Both cost the line.</p>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+          <div class="card blueprint" style="position:relative;padding:24px">
+            <div class="card-kicker">03 · Certification</div>
+            <h4 style="margin:2px 0 8px;font-size:20px">Black boxes don't pass audit</h4>
+            <p style="margin:0;font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Probabilistic planners cannot guarantee safety, so they cannot clear strict industrial certification.</p>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:56px clamp(20px,4vw,32px)">
+        <h2 style="font-size:32px;margin:0 0 28px">The team</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px">
+          <div>
+            <div class="blueprint duotone" style="position:relative;aspect-ratio:1;overflow:hidden">
+              <img src="images/nikos_headshot_compressed.jpeg" alt="Nikos Doiron" style="width:100%;height:100%;object-fit:cover;object-position:center bottom">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </div>
+            <h4 style="margin:16px 0 2px;font-size:19px">Nikos Doiron</h4>
+            <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">CEO &amp; Founder</div>
+            <p style="margin:8px 0 0;font-size:13px;color:color-mix(in srgb, var(--color-text) 65%, transparent)">Numerical optimization and real-time motion planning. Led the work behind the 34% Link6 result.</p>
+          </div>
+          <div>
+            <div class="blueprint duotone" style="position:relative;aspect-ratio:1;overflow:hidden">
+              <img src="images/joshua_headshot_compressed.jpeg" alt="Joshua Flight" style="width:100%;height:100%;object-fit:cover;object-position:center top;transform:scale(1.4) translateY(-8%)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </div>
+            <h4 style="margin:16px 0 2px;font-size:19px">Joshua Flight</h4>
+            <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">CTO</div>
+            <p style="margin:8px 0 0;font-size:13px;color:color-mix(in srgb, var(--color-text) 65%, transparent)">Kinematics and dynamics of redundant manipulators; redundancy resolution.</p>
+          </div>
+          <div>
+            <div class="blueprint duotone" style="position:relative;aspect-ratio:1;overflow:hidden">
+              <img src="images/mario_headshot_compressed.jpeg" alt="Mario Dandurand" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </div>
+            <h4 style="margin:16px 0 2px;font-size:19px">Mario Dandurand</h4>
+            <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">Head of AI &amp; Growth</div>
+            <p style="margin:8px 0 0;font-size:13px;color:color-mix(in srgb, var(--color-text) 65%, transparent)">AI-driven motion prediction for dynamic environments; commercial partnerships.</p>
+          </div>
+          <div>
+            <div class="blueprint duotone" style="position:relative;aspect-ratio:1;overflow:hidden">
+              <img src="images/andre_headshot_compressed.jpeg" alt="André Gallant" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </div>
+            <h4 style="margin:16px 0 2px;font-size:19px">André Gallant</h4>
+            <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">Research Director · Dynamium Lab</div>
+            <p style="margin:8px 0 0;font-size:13px;color:color-mix(in srgb, var(--color-text) 65%, transparent)">Research partner on high-performance algorithms behind the engine.</p>
+          </div>
+          <div>
+            <div class="blueprint duotone" style="position:relative;aspect-ratio:1;overflow:hidden">
+              <img src="images/thomas_headshot_compressed.jpeg" alt="Thomas Duquette" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </div>
+            <h4 style="margin:16px 0 2px;font-size:19px">Thomas Duquette</h4>
+            <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">R&amp;D Developer · Dynamium Lab</div>
+            <p style="margin:8px 0 0;font-size:13px;color:color-mix(in srgb, var(--color-text) 65%, transparent)">Collision-distance computation; co-led the 34% Link6 cycle-time result.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isNews }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:64px 32px 48px">
+        <h6 style="color:var(--color-accent-700);margin:0 0 12px">News</h6>
+        <h1 style="font-size:clamp(40px,4.6vw,60px);line-height:1;margin:0 0 16px">Notes from the lab</h1>
+        <p style="font-size:17px;max-width:52ch;margin:0;color:color-mix(in srgb, var(--color-text) 75%, transparent)">Benchmarks, releases and research from the team building the engine.</p>
+      </div>
+    </section>
+    <section>
+      <div style="max-width:1180px;margin:0 auto;padding:56px 32px 80px">
+        <div class="blueprint" style="position:relative;padding:64px clamp(20px,4vw,32px);text-align:center;background:color-mix(in srgb, var(--color-neutral-200) 40%, transparent)">
+          <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:10px">No entries yet</div>
+          <h3 style="margin:0 0 8px;font-size:26px">First post lands with the benchmark release</h3>
+          <p style="margin:0 auto 20px;max-width:46ch;font-size:14px;color:color-mix(in srgb, var(--color-text) 65%, transparent)">We're preparing the Link6 cycle-time write-up. Ask for it early and we'll send it when it's out.</p>
+          <a class="btn btn-secondary" href="mailto:info@hadeonrobotics.com?subject=Benchmark%20Write-up" style="padding:10px 20px;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Request the write-up</a>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isCareers }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:64px 32px 48px">
+        <h6 style="color:var(--color-accent-700);margin:0 0 12px">Careers</h6>
+        <h1 style="font-size:clamp(40px,4.6vw,60px);line-height:1;margin:0 0 16px">Hard problems,<br>small team</h1>
+        <p style="font-size:17px;max-width:54ch;margin:0;color:color-mix(in srgb, var(--color-text) 75%, transparent)">We work at the intersection of numerical optimization, robotics and systems engineering. If that is your idea of a good week, write to us.</p>
+      </div>
+    </section>
+    <section>
+      <div style="max-width:1180px;margin:0 auto;padding:56px 32px 80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(28px,4vw,48px);align-items:start">
+        <div class="blueprint" style="position:relative;padding:48px clamp(20px,4vw,32px);background:color-mix(in srgb, var(--color-neutral-200) 40%, transparent)">
+          <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:10px">Open roles · 0</div>
+          <h3 style="margin:0 0 8px;font-size:26px">No posted positions right now</h3>
+          <p style="margin:0 0 20px;max-width:48ch;font-size:14px;color:color-mix(in srgb, var(--color-text) 65%, transparent)">We hire opportunistically. Send what you've built — solver work, controls, perception, or industrial deployment experience.</p>
+          <a class="btn btn-primary" href="mailto:info@hadeonrobotics.com?subject=Open%20Application" style="padding:11px 20px;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Send an open application</a>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+        <div style="border-top:1px solid var(--color-text);padding-top:16px">
+          <h4 style="margin:0 0 12px;font-size:19px">What we look for</h4>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:14px;color:color-mix(in srgb, var(--color-text) 75%, transparent)">
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>Comfort with optimization and rigid-body kinematics</span></li>
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>C++ or Rust performance work under real-time constraints</span></li>
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>A bias for shipping onto real hardware</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <footer style="border-top:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-neutral-200) 55%, transparent)">
+    <div style="max-width:1180px;margin:0 auto;padding:48px clamp(20px,4vw,32px) 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(28px,4vw,48px)">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <img src="images/HadeonLogo.svg" alt="Hadeon Robotics" style="height:26px;width:auto">
+        </div>
+        <p style="margin:0;font-size:13px;max-width:34ch;color:color-mix(in srgb, var(--color-text) 60%, transparent)">The motion engine for robotics. Cocagne, New Brunswick, Canada.</p>
+      </div>
+      <div>
+        <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-bottom:12px">Site</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+          <a href="#" onClick="{{ goHome }}">Home</a>
+          <a href="#" onClick="{{ navSolutions }}">Solutions</a>
+          <a href="#" onClick="{{ navAbout }}">About</a>
+          <a href="#" onClick="{{ navNews }}">News</a>
+          <a href="#" onClick="{{ navCareers }}">Careers</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);margin-bottom:12px">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+          <a href="mailto:info@hadeonrobotics.com">info@hadeonrobotics.com</a>
+          <a href="https://www.linkedin.com/company/hadeon-robotics/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Dynamium-Lab/blast" target="_blank" rel="noopener">BLAST on GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:16px clamp(20px,4vw,32px) 32px;border-top:1px solid var(--color-divider);font-size:12px;color:color-mix(in srgb, var(--color-text) 50%, transparent)">
+      © 2026 Hadeon Robotics Inc. All rights reserved.
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showProofStrip&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home page&quot;},&quot;obstacleCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:3,&quot;min&quot;:1,&quot;max&quot;:5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero demo&quot;}}">
+class Component extends DCLogic {
+  state = { page: 'home' };
+
+  canvasRef = React.createRef();
+  wrapRef = React.createRef();
+  statusRef = React.createRef();
+  tSolveRef = React.createRef();
+  tIterRef = React.createRef();
+  tClearRef = React.createRef();
+  tErrRef = React.createRef();
+
+  // UR5e model — DH values from the Blast readme's UR5e definition (metres)
+  DH = [
+    { a: 0,       d: 0.1625, al:  Math.PI / 2 },
+    { a: -0.425,  d: 0,      al:  0 },
+    { a: -0.3922, d: 0,      al:  0 },
+    { a: 0,       d: 0.1333, al:  Math.PI / 2 },
+    { a: 0,       d: 0.0997, al: -Math.PI / 2 },
+    { a: 0,       d: 0.0996, al:  0 }
+  ];
+  // ── blast::Optimization, ported ────────────────────────────────────────
+  // Degree-5 B-spline in joint space, clamped stop-to-stop boundaries,
+  // x = [free control points…, T]; objective = T (Objective::time_weight);
+  // constraints reduced to one worst-case value per spline segment
+  // (OptimizationMethod::with_segments). Limits are UR5e.hpp verbatim.
+  DEGREE = 5;
+  NCTRL = 12;                                              // blast::Bspline(12, …, 5, 6)
+  NPTS = 28;
+  VMAX = [3.1416, 3.1416, 3.1416, 3.1416, 3.1416, 3.1416]; // limits.velocity_max
+  AMAX = [13.96, 13.96, 13.96, 13.96, 13.96, 13.96];       // limits.acceleration_max
+  PMAX = [6.2832, 6.2832, 3.1416, 6.2832, 6.2832, 6.2832]; // limits.position_max
+  TUBE = 0.055;                                            // link capsule radius
+  TOL = 0.01;                                              // success_tolerance
+  MAX_TRIES = 4;                                           // max_tries
+  ITERS = 14;
+
+  componentDidMount() { this.boot(); }
+  componentDidUpdate() { if (this.state.page === 'home' && !this.raf) this.boot(); }
+  componentWillUnmount() { this.teardown(); }
+
+  teardown() {
+    if (this.raf) cancelAnimationFrame(this.raf);
+    this.raf = null;
+    if (this.ro) { this.ro.disconnect(); this.ro = null; }
+  }
+
+  go(page) {
+    return (e) => {
+      if (e) e.preventDefault();
+      if (page !== 'home') this.teardown();
+      this.setState({ page });
+      if (typeof window !== 'undefined') window.scrollTo(0, 0);
+    };
+  }
+
+  // ── vector helpers ──────────────────────────────────────────────────────
+  add(a, b) { return [a[0] + b[0], a[1] + b[1], a[2] + b[2]]; }
+  sub(a, b) { return [a[0] - b[0], a[1] - b[1], a[2] - b[2]]; }
+  scl(a, k) { return [a[0] * k, a[1] * k, a[2] * k]; }
+  dot(a, b) { return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]; }
+  crs(a, b) { return [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]; }
+  len(a) { return Math.hypot(a[0], a[1], a[2]); }
+  nrm(a) { const l = this.len(a) || 1; return [a[0] / l, a[1] / l, a[2] / l]; }
+
+  // ── forward kinematics (standard DH) ────────────────────────────────────
+  fk(q) {
+    let R = [1, 0, 0, 0, 1, 0, 0, 0, 1];
+    let p = [0, 0, 0];
+    const pts = [p], zs = [];
+    for (let i = 0; i < 6; i++) {
+      const D = this.DH[i];
+      const ct = Math.cos(q[i]), st = Math.sin(q[i]);
+      const ca = Math.cos(D.al), sa = Math.sin(D.al);
+      const M = [ct, -st * ca, st * sa,
+                 st,  ct * ca, -ct * sa,
+                 0,   sa,      ca];
+      const t = [D.a * ct, D.a * st, D.d];
+      zs.push([R[2], R[5], R[8]]);
+      p = this.add(p, [R[0] * t[0] + R[1] * t[1] + R[2] * t[2],
+                       R[3] * t[0] + R[4] * t[1] + R[5] * t[2],
+                       R[6] * t[0] + R[7] * t[1] + R[8] * t[2]]);
+      const C = new Array(9);
+      for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++)
+        C[r * 3 + c] = R[r * 3] * M[c] + R[r * 3 + 1] * M[3 + c] + R[r * 3 + 2] * M[6 + c];
+      R = C;
+      pts.push(p);
+    }
+    return { pts, zs };
+  }
+
+  // distance from a point to a segment
+  segDist(A, B, P) {
+    const ab = this.sub(B, A), ap = this.sub(P, A);
+    const l2 = this.dot(ab, ab) || 1e-9;
+    const t = Math.max(0, Math.min(1, this.dot(ap, ab) / l2));
+    return this.len(this.sub(P, this.add(A, this.scl(ab, t))));
+  }
+
+  clearance(q) {
+    const k = this.fk(q);
+    let best = Infinity;
+    for (let i = 0; i < 6; i++) {
+      for (const o of this.obs) {
+        const d = this.segDist(k.pts[i], k.pts[i + 1], o.c) - o.r - this.TUBE;
+        if (d < best) best = d;
+      }
+    }
+    return best;
+  }
+
+  // ── inverse kinematics (damped least squares, position only) ────────────
+  ik(target, seed) {
+    const q = seed.slice();
+    for (let it = 0; it < 90; it++) {
+      const k = this.fk(q);
+      const ee = k.pts[6];
+      let err = this.sub(target, ee);
+      const em = this.len(err);
+      if (em < 0.0015) break;
+      if (em > 0.04) err = this.scl(err, 0.04 / em);
+      const J = [[], [], []];
+      for (let j = 0; j < 6; j++) {
+        const c = this.crs(k.zs[j], this.sub(ee, k.pts[j]));
+        J[0][j] = c[0]; J[1][j] = c[1]; J[2][j] = c[2];
+      }
+      const lam = 0.02;
+      const A = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+      for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) {
+        let v = 0; for (let j = 0; j < 6; j++) v += J[r][j] * J[c][j];
+        A[r][c] = v + (r === c ? lam : 0);
+      }
+      const m = A;
+      const c00 = m[1][1] * m[2][2] - m[1][2] * m[2][1];
+      const c01 = m[1][2] * m[2][0] - m[1][0] * m[2][2];
+      const c02 = m[1][0] * m[2][1] - m[1][1] * m[2][0];
+      const det = m[0][0] * c00 + m[0][1] * c01 + m[0][2] * c02 || 1e-9;
+      const inv = [
+        [c00, m[0][2] * m[2][1] - m[0][1] * m[2][2], m[0][1] * m[1][2] - m[0][2] * m[1][1]],
+        [c01, m[0][0] * m[2][2] - m[0][2] * m[2][0], m[0][2] * m[1][0] - m[0][0] * m[1][2]],
+        [c02, m[0][1] * m[2][0] - m[0][0] * m[2][1], m[0][0] * m[1][1] - m[0][1] * m[1][0]]
+      ];
+      const u = [
+        (inv[0][0] * err[0] + inv[0][1] * err[1] + inv[0][2] * err[2]) / det,
+        (inv[1][0] * err[0] + inv[1][1] * err[1] + inv[1][2] * err[2]) / det,
+        (inv[2][0] * err[0] + inv[2][1] * err[1] + inv[2][2] * err[2]) / det
+      ];
+      for (let j = 0; j < 6; j++) {
+        q[j] += Math.max(-0.18, Math.min(0.18, J[0][j] * u[0] + J[1][j] * u[1] + J[2][j] * u[2]));
+        q[j] = Math.max(-3.05, Math.min(3.05, q[j]));
+      }
+    }
+    return q;
+  }
+
+  // multi-start IK: converge, then keep the branch closest to the preferred config
+  ikBest(target, prefer) {
+    const seeds = [
+      prefer,
+      [0, -1.57, 1.57, -1.57, -1.57, 0],
+      [0, -1.2, 1.6, -1.9, -1.57, 0],
+      [1.2, -1.0, 1.2, -1.7, -1.57, 0],
+      [-1.2, -1.4, 1.4, -1.5, -1.57, 0]
+    ];
+    for (let i = 0; i < 6; i++) seeds.push(Array.from({ length: 6 }, () => (Math.random() - 0.5) * 5));
+    let best = null, fallback = null;
+    for (const sd of seeds) {
+      const q = this.ik(target, sd);
+      const err = this.len(this.sub(target, this.fk(q).pts[6]));
+      if (!fallback || err < fallback.err) fallback = { q, err };
+      if (err > 0.005) continue;
+      const dist = q.reduce((a, v, j) => a + Math.abs(v - prefer[j]), 0);
+      const clear = this.clearance(q);
+      const score = dist + (clear < 0 ? 40 : 0);
+      if (!best || score < best.score) best = { q, score };
+    }
+    return best ? best.q : fallback.q;
+  }
+
+  // ── blast::Bspline::compute_basis (uniform clamped knots) ───────────────
+  buildSpline() {
+    const nc = this.NCTRL, p = this.DEGREE, npts = this.NPTS, m = nc + p;
+    const knots = new Float64Array(m + 1);
+    for (let i = m; i > m - p - 1; i--) knots[i] = 1;
+    const du = 1 / (m + 1 - 2 * (p + 1) + 1);
+    for (let i = p + 1; i < m - p; i++) knots[i] = knots[i - 1] + du;
+    const N = new Float64Array(m * (p + 1));
+    const bp = [], bv = [], ba = [];
+    const div = (num, den) => (Math.abs(den) < 1e-12 ? 0 : num / den);
+    const step = 1 / (npts - 1);
+    for (let pt = 0; pt < npts; pt++) {
+      const u = pt * step;
+      N.fill(0);
+      for (let i = 0; i < m; i++) N[i] = (u >= knots[i] && u < knots[i + 1]) ? 1 : 0;
+      if (pt === npts - 1) N[nc - 1] = 1;
+      for (let pi = 1; pi <= p; pi++)
+        for (let i = 0; i < m - pi; i++)
+          N[m * pi + i] = div(N[m * (pi - 1) + i] * (u - knots[i]), knots[i + pi] - knots[i])
+            + div(N[m * (pi - 1) + i + 1] * (knots[i + pi + 1] - u), knots[i + pi + 1] - knots[i + 1]);
+      const cp = new Float64Array(nc), cv = new Float64Array(nc), ca = new Float64Array(nc);
+      for (let i = 0; i < nc; i++) cp[i] = N[m * p + i];
+      for (let i = 0; i < nc - 1; i++) cv[i] = -div(p * N[m * (p - 1) + i + 1], knots[i + p + 1] - knots[i + 1]);
+      for (let i = 1; i < nc; i++) cv[i] += div(p * N[m * (p - 1) + i], knots[i + p] - knots[i]);
+      const k2 = p * (p - 1);
+      for (let i = 0; i < nc - 2; i++) ca[i] = div(k2 * N[m * (p - 2) + i + 2], (knots[i + p + 1] - knots[i + 1]) * (knots[i + p + 1] - knots[i + 2]));
+      for (let i = 1; i < nc - 1; i++) ca[i] -= div(k2 * N[m * (p - 2) + i + 1] * (div(1, knots[i + p] - knots[i]) + div(1, knots[i + p + 1] - knots[i + 1])), knots[i + p] - knots[i + 1]);
+      for (let i = 2; i < nc; i++) ca[i] += div(k2 * N[m * (p - 2) + i], (knots[i + p - 1] - knots[i]) * (knots[i + p] - knots[i]));
+      bp.push(this.sparse(cp)); bv.push(this.sparse(cv)); ba.push(this.sparse(ca));
+    }
+    this.spl = { bp, bv, ba, nseg: nc - p, xLen: 6 * (nc - 6) + 1 };
+  }
+
+  sparse(col) {
+    const idx = [], w = [];
+    for (let i = 0; i < col.length; i++) if (Math.abs(col[i]) > 1e-12) { idx.push(i); w.push(col[i]); }
+    return { idx, w, n: idx.length };
+  }
+
+  // blast::Bspline::compute_control — the three control points at each end are
+  // fixed by the task boundary; with zero boundary velocity and acceleration
+  // (Task::stop_to_stop) the kv/ka terms collapse onto the endpoint value.
+  control(x, q0, q1) {
+    const nc = this.NCTRL, out = [];
+    let xi = 0;
+    for (let j = 0; j < 6; j++) {
+      const c = new Float64Array(nc);
+      c[0] = c[1] = c[2] = q0[j];
+      for (let i = 3; i < nc - 3; i++) c[i] = x[xi++];
+      c[nc - 3] = c[nc - 2] = c[nc - 1] = q1[j];
+      out.push(c);
+    }
+    return out;
+  }
+
+  // one constraint evaluation: worst case per segment for position, velocity,
+  // acceleration and external collision — c_i <= 0 is feasible
+  evalX(x) {
+    this.numEval++;
+    const nseg = this.spl.nseg, npts = this.NPTS;
+    const T = Math.max(0.05, x[x.length - 1]);
+    const ctr = this.control(x, this.q0, this.q1);
+    const c = new Float64Array(nseg * 4).fill(-1);
+    const q = new Array(6);
+    let minClear = Infinity;
+    for (let pt = 0; pt < npts; pt++) {
+      const seg = Math.min(nseg - 1, Math.floor(pt * nseg / npts));
+      const P = this.spl.bp[pt], V = this.spl.bv[pt], A = this.spl.ba[pt];
+      let pw = -1, vw = -1, aw = -1;
+      for (let j = 0; j < 6; j++) {
+        const cj = ctr[j];
+        let pv = 0, vv = 0, av = 0;
+        for (let k = 0; k < P.n; k++) pv += cj[P.idx[k]] * P.w[k];
+        for (let k = 0; k < V.n; k++) vv += cj[V.idx[k]] * V.w[k];
+        for (let k = 0; k < A.n; k++) av += cj[A.idx[k]] * A.w[k];
+        q[j] = pv;
+        vv /= T; av /= T * T;
+        const p1 = Math.abs(pv) / this.PMAX[j] - 1;
+        const v1 = Math.abs(vv) / this.VMAX[j] - 1;
+        const a1 = Math.abs(av) / this.AMAX[j] - 1;
+        if (p1 > pw) pw = p1;
+        if (v1 > vw) vw = v1;
+        if (a1 > aw) aw = a1;
+      }
+      if (pw > c[seg]) c[seg] = pw;
+      if (vw > c[nseg + seg]) c[nseg + seg] = vw;
+      if (aw > c[2 * nseg + seg]) c[2 * nseg + seg] = aw;
+      const d = this.clearance(q);
+      if (d < minClear) minClear = d;
+      if (-d > c[3 * nseg + seg]) c[3 * nseg + seg] = -d;
+    }
+    let pvaViol = 0, viol = 0;
+    for (let i = 0; i < 3 * nseg; i++) if (c[i] > pvaViol) pvaViol = c[i];
+    for (let i = 0; i < c.length; i++) if (c[i] > viol) viol = c[i];
+    return { c, viol, pvaViol, T, minClear };
+  }
+
+  merit(x, mu) {
+    const r = this.evalX(x);
+    let pen = 0;
+    for (let i = 0; i < r.c.length; i++) if (r.c[i] > 0) pen += r.c[i] * r.c[i];
+    return { f: r.T + mu * pen, viol: r.viol, T: r.T, minClear: r.minClear };
+  }
+
+  clampX(x) {
+    const nf = this.NCTRL - 6;
+    for (let j = 0; j < 6; j++)
+      for (let i = 0; i < nf; i++) {
+        const k = j * nf + i;
+        x[k] = Math.max(-this.PMAX[j], Math.min(this.PMAX[j], x[k]));
+      }
+    x[x.length - 1] = Math.max(0.15, Math.min(20, x[x.length - 1]));
+    return x;
+  }
+
+  // blast::guess_shot_mean — n shots, keep the lowest total violation × T
+  guess(shots, attempt, via) {
+    const n = this.spl.xLen, nf = this.NCTRL - 6;
+    let dq = 0;
+    for (let j = 0; j < 6; j++) dq = Math.max(dq, Math.abs(this.q1[j] - this.q0[j]));
+    const T0 = Math.max(0.45, 2.1 * dq / this.VMAX[0]);
+    const spread = 0.7 + 0.6 * (attempt || 0);
+    let best = null;
+    for (let s = 0; s < shots; s++) {
+      const x = new Float64Array(n);
+      const sig = s === 0 ? 0 : spread * Math.random();
+      // half the shots are seeded through the detour pose when one exists
+      const useVia = via && (s === 1 || s % 2 === 1);
+      let xi = 0;
+      for (let j = 0; j < 6; j++)
+        for (let i = 0; i < nf; i++) {
+          const f = (i + 1) / (nf + 1);
+          const base = useVia
+            ? (f < 0.5 ? this.q0[j] + (via[j] - this.q0[j]) * (f / 0.5)
+                       : via[j] + (this.q1[j] - via[j]) * ((f - 0.5) / 0.5))
+            : this.q0[j] + (this.q1[j] - this.q0[j]) * f;
+          x[xi++] = base + (Math.random() - 0.5) * 2 * (useVia && s === 1 ? 0 : sig);
+        }
+      x[n - 1] = T0 * (0.8 + Math.random() * 0.7);
+      this.clampX(x);
+      const r = this.evalX(x);
+      let sum = 0;
+      for (let i = 0; i < r.c.length; i++) if (r.c[i] > 0) sum += r.c[i];
+      const score = (sum + 1e-3) * r.T;
+      if (!best || score < best.score) best = { x, score };
+    }
+    return best.x;
+  }
+
+  // When an obstacle sits on the straight-line path, build a via-pose clear of
+  // it — pushed out along the obstacle-surface normal — to seed the shotgun.
+  detourVia() {
+    if (!this.obs || !this.obs.length || !this.q0 || !this.q1) return null;
+    const A = this.fk(this.q0).pts[6], B = this.fk(this.q1).pts[6];
+    let worst = null;
+    for (const o of this.obs) {
+      const d = this.segDist(A, B, o.c) - o.r - this.TUBE;
+      if (!worst || d < worst.d) worst = { o, d };
+    }
+    if (!worst || worst.d > 0.03) return null;
+    const o = worst.o;
+    const M = this.scl(this.add(A, B), 0.5);
+    let nv = this.sub(M, o.c);
+    if (this.len(nv) < 1e-3) nv = this.crs(this.nrm(this.sub(B, A)), [0, 0, 1]);
+    nv = this.nrm(nv);
+    const W = this.add(o.c, this.scl(nv, o.r + this.TUBE + 0.09));
+    W[2] = Math.max(0.12, Math.min(1.05, W[2]));
+    return this.ikBest(W, this.q0);
+  }
+
+  // penalty descent with finite-difference gradients and a backtracking line
+  // search, standing in for blast's native SQP (which is C++ only)
+  solveFrom(x0, mu0) {
+    const n = x0.length, eps = 1e-4;
+    let x = x0.slice(), mu = mu0;
+    let cur = this.merit(x, mu);
+    const g = new Float64Array(n);
+    for (let it = 0; it < this.ITERS; it++) {
+      for (let j = 0; j < n; j++) {
+        const keep = x[j];
+        x[j] = keep + eps;
+        g[j] = (this.merit(x, mu).f - cur.f) / eps;
+        x[j] = keep;
+      }
+      let gn = 0;
+      for (let j = 0; j < n; j++) gn += g[j] * g[j];
+      gn = Math.sqrt(gn) || 1e-9;
+      let step = 0.3 / gn, moved = false;
+      for (let ls = 0; ls < 6; ls++) {
+        const y = new Float64Array(n);
+        for (let j = 0; j < n; j++) y[j] = x[j] - step * g[j];
+        this.clampX(y);
+        const m = this.merit(y, mu);
+        if (m.f < cur.f) { x = y; cur = m; moved = true; break; }
+        step *= 0.4;
+      }
+      if (!moved && cur.viol <= this.TOL) break;
+      mu *= 1.4;
+      cur = this.merit(x, mu);
+    }
+    const r = this.evalX(x);
+    // clearance is a hard constraint: success_tolerance applies to the
+    // dimensionless PVA constraints only, never to penetration
+    return { x, T: r.T, viol: r.viol, minClear: r.minClear, ok: r.pvaViol <= this.TOL && r.minClear >= 0 };
+  }
+
+  plan() {
+    if (!this.spl) this.buildSpline();
+    this.numEval = 0;
+    const t0 = performance.now();
+    let best = null;
+    const via = this.detourVia();
+    for (let attempt = 0; attempt < this.MAX_TRIES; attempt++) {
+      const r = this.solveFrom(this.guess(attempt === 0 ? 16 : 12, attempt, via), 25);
+      const better = !best
+        || (r.ok && !best.ok)
+        || (r.ok && best.ok && r.T < best.T)
+        || (!r.ok && !best.ok && r.viol < best.viol);
+      if (better) best = r;
+      if (best.ok) break;
+    }
+    const ms = performance.now() - t0;
+    const sm = this.sample(best.x);
+    this.traj = {
+      x: best.x, T: best.T, minClear: best.minClear, viol: best.viol,
+      success: best.ok, ms, evals: this.numEval, Q: sm.Q
+    };
+    this.playT = performance.now();
+    this.path = sm.P;
+    this.pushReadout();
+  }
+
+  sample(x) {
+    const ctr = this.control(x, this.q0, this.q1);
+    const Q = [], P = [];
+    for (let pt = 0; pt < this.NPTS; pt++) {
+      const B = this.spl.bp[pt];
+      const q = new Array(6);
+      for (let j = 0; j < 6; j++) {
+        const cj = ctr[j];
+        let v = 0;
+        for (let k = 0; k < B.n; k++) v += cj[B.idx[k]] * B.w[k];
+        q[j] = v;
+      }
+      Q.push(q); P.push(this.fk(q).pts[6]);
+    }
+    return { Q, P };
+  }
+
+  qAt(s) {
+    const Q = this.traj.Q, n = Q.length - 1;
+    const u = Math.max(0, Math.min(1, s)) * n;
+    const i = Math.min(n - 1, Math.floor(u)), f = u - i;
+    return Q[i].map((v, j) => v + (Q[i + 1][j] - v) * f);
+  }
+
+  pushReadout() {
+    const t = this.traj;
+    const set = (r, v) => { if (r.current) r.current.textContent = v; };
+    set(this.tSolveRef, t.ms.toFixed(1) + ' ms');
+    set(this.tIterRef, String(t.evals));
+    const mm = t.minClear * 1000;
+    set(this.tClearRef, mm < 0 ? mm.toFixed(0) + ' mm · contact' : mm.toFixed(0) + ' mm');
+    if (this.tClearRef.current) this.tClearRef.current.style.color = mm < 0 ? '#b45f4d' : '';
+    set(this.tErrRef, t.T.toFixed(2) + ' s');
+    if (this.tIterRef.current) this.tIterRef.current.title = 'max constraint violation ' + t.viol.toFixed(4);
+    if (this.statusRef.current) {
+      this.statusRef.current.textContent = t.success ? 'FEASIBLE' : 'INFEASIBLE';
+      this.statusRef.current.style.color = t.success ? 'var(--color-accent-700)' : '#b45f4d';
+    }
+  }
+
+  // ── scene ───────────────────────────────────────────────────────────────
+  scene(init) {
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    const n = Math.max(1, Math.min(3, this.props.obstacleCount || 2));
+    // a pillar of spheres standing between the two poses
+    const th = rnd(-0.35, 0.35), rad = rnd(0.44, 0.52);
+    this.obs = [];
+    for (let i = 0; i < n; i++) {
+      this.obs.push({ c: [rad * Math.cos(th), rad * Math.sin(th), 0.28 + i * 0.24], r: rnd(0.10, 0.13) });
+    }
+    const spread = rnd(0.75, 1.05);
+    this.startP = [0.50 * Math.cos(th - spread), 0.50 * Math.sin(th - spread), rnd(0.18, 0.30)];
+    this.goalP = [0.50 * Math.cos(th + spread), 0.50 * Math.sin(th + spread), rnd(0.50, 0.68)];
+    this.resolve();
+  }
+
+  resolve() {
+    const home = [0, -1.2, 1.6, -1.9, -1.57, 0];
+    this.q0 = this.ikBest(this.startP, this.q0 || home);
+    this.q1 = this.ikBest(this.goalP, this.q0);
+    this.plan();
+  }
+
+  boot() {
+    const cv = this.canvasRef.current, wrap = this.wrapRef.current;
+    if (!cv || !wrap) return;
+    this.cam = { az: -0.95, el: 0.36, dist: 2.15, target: [0, 0, 0.42] };
+    this.userActive = false;
+    this.drag = null;
+    this.t0 = performance.now();
+    this.updateBasis();
+    if (!this.spl) this.buildSpline();
+    this.scene(true);
+
+    this.ro = new ResizeObserver(() => this.resize());
+    this.ro.observe(wrap);
+    this.resize();
+
+    const pos = (e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+    cv.onpointerdown = (e) => {
+      const p = pos(e);
+      let hit = null, bd = 24;
+      [['start', this.startP], ['goal', this.goalP]].forEach(([type, P]) => {
+        const s = this.project(P);
+        if (!s) return;
+        const d = Math.hypot(p.x - s.x, p.y - s.y);
+        if (d < bd) { bd = d; hit = { type }; }
+      });
+      this.obs.forEach((o, i) => {
+        const s = this.project(o.c);
+        if (!s) return;
+        const d = Math.hypot(p.x - s.x, p.y - s.y);
+        const rad = o.r * s.scale;
+        if (d < rad + 8 && d < bd + rad) { bd = d; hit = { type: 'obs', i }; }
+      });
+      this.drag = hit || { type: 'orbit' };
+      this.last = p;
+      this.userActive = true;
+      cv.setPointerCapture(e.pointerId);
+    };
+    cv.onpointermove = (e) => {
+      if (!this.drag) return;
+      const p = pos(e);
+      const dx = p.x - this.last.x, dy = p.y - this.last.y;
+      this.last = p;
+      if (this.drag.type === 'orbit') {
+        this.cam.az -= dx * 0.006;
+        this.cam.el = Math.max(-0.1, Math.min(1.2, this.cam.el + dy * 0.005));
+        return;
+      }
+      const obj = this.drag.type === 'start' ? this.startP : this.drag.type === 'goal' ? this.goalP : this.obs[this.drag.i].c;
+      const s = this.project(obj);
+      if (!s) return;
+      const k = 1 / s.scale;
+      const mv = this.add(this.scl(this.basis.right, dx * k), this.scl(this.basis.up, -dy * k));
+      obj[0] = Math.max(-0.85, Math.min(0.85, obj[0] + mv[0]));
+      obj[1] = Math.max(-0.85, Math.min(0.85, obj[1] + mv[1]));
+      obj[2] = Math.max(0.06, Math.min(1.1, obj[2] + mv[2]));
+      const now = performance.now();
+      if (now - (this.lastSolve || 0) > 140) { this.lastSolve = now; this.resolve(); }
+    };
+    const up = (e) => {
+      if (this.drag && this.drag.type !== 'orbit') this.resolve();
+      this.drag = null;
+      if (e && cv.hasPointerCapture && cv.hasPointerCapture(e.pointerId)) cv.releasePointerCapture(e.pointerId);
+    };
+    cv.onpointerup = up; cv.onpointercancel = up;
+
+    const loop = () => { try { this.tickFrame(); this.draw(); } catch (err) { window.__derr = (window.__derr || []); if (window.__derr.length < 3) window.__derr.push(String(err && err.stack || err)); } this.raf = requestAnimationFrame(loop); };
+    this.raf = requestAnimationFrame(loop);
+  }
+
+  resize() {
+    const cv = this.canvasRef.current, wrap = this.wrapRef.current;
+    if (!cv || !wrap) return;
+    const w = wrap.clientWidth, h = wrap.clientHeight;
+    if (!w || !h) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    cv.getContext('2d').setTransform(dpr, 0, 0, dpr, 0, 0);
+    this.W = w; this.H = h;
+    this.focal = Math.min(w, h) * 1.05;
+  }
+
+  updateBasis() {
+    const c = this.cam;
+    const dir = [Math.cos(c.el) * Math.cos(c.az), Math.cos(c.el) * Math.sin(c.az), Math.sin(c.el)];
+    const eye = this.add(c.target, this.scl(dir, c.dist));
+    const f = this.nrm(this.sub(c.target, eye));
+    const right = this.nrm(this.crs(f, [0, 0, 1]));
+    this.basis = { eye, f, right, up: this.crs(right, f) };
+  }
+
+  project(P) {
+    const b = this.basis;
+    if (!b) return null;
+    const d = this.sub(P, b.eye);
+    const cz = this.dot(d, b.f);
+    if (cz < 0.08) return null;
+    const scale = this.focal / cz;
+    return { x: this.W / 2 + this.dot(d, b.right) * scale, y: this.H / 2 - this.dot(d, b.up) * scale, scale };
+  }
+
+  tickFrame() {
+    if (!this.W || !this.traj) return;
+    if (!this.userActive) {
+      const t = (performance.now() - this.t0) / 1000;
+      this.cam.az = -0.95 + 0.22 * Math.sin(t * 0.07);
+    }
+    this.updateBasis();
+    const cycle = this.traj.T + 1.0;
+    const el = ((performance.now() - this.playT) / 1000) % cycle;
+    this.phase = Math.min(1, el / this.traj.T);
+    // auto: retarget periodically until the visitor takes over
+    if (!this.userActive && el > cycle - 0.05 && (performance.now() - (this.lastAuto || 0)) > 1000) {
+      this.lastAuto = performance.now();
+      const a = this.startP; this.startP = this.goalP; this.goalP = a;
+      this.resolve();
+    }
+  }
+
+  // ── render ──────────────────────────────────────────────────────────────
+  seg(g, A, B) {
+    const a = this.project(A), b = this.project(B);
+    if (!a || !b) return;
+    g.moveTo(a.x, a.y); g.lineTo(b.x, b.y);
+  }
+  ring(g, c, r, plane) {
+    let first = true;
+    for (let i = 0; i <= 40; i++) {
+      const t = (i / 40) * Math.PI * 2;
+      const o = plane === 0 ? [Math.cos(t) * r, Math.sin(t) * r, 0]
+              : plane === 1 ? [Math.cos(t) * r, 0, Math.sin(t) * r]
+                            : [0, Math.cos(t) * r, Math.sin(t) * r];
+      const p = this.project(this.add(c, o));
+      if (!p) { first = true; continue; }
+      if (first) { g.moveTo(p.x, p.y); first = false; } else g.lineTo(p.x, p.y);
+    }
+  }
+  arm(g, q, color, width) {
+    const pts = this.fk(q).pts;
+    g.strokeStyle = color; g.lineWidth = width;
+    g.lineCap = 'round'; g.lineJoin = 'round';
+    g.beginPath();
+    let started = false;
+    for (const P of pts) {
+      const p = this.project(P);
+      if (!p) { started = false; continue; }
+      if (!started) { g.moveTo(p.x, p.y); started = true; } else g.lineTo(p.x, p.y);
+    }
+    g.stroke();
+    g.lineCap = 'butt';
+    return pts;
+  }
+
+  draw() {
+    const cv = this.canvasRef.current;
+    if (!cv || !this.W || !this.traj) return;
+    const g = cv.getContext('2d');
+    const accent = '#5980a6', ink = '#1d1f20';
+    g.clearRect(0, 0, this.W, this.H);
+
+    g.strokeStyle = 'rgba(29,31,32,0.09)'; g.lineWidth = 1;
+    g.beginPath();
+    for (let i = -5; i <= 5; i++) {
+      const v = i * 0.2;
+      this.seg(g, [v, -1.0, 0], [v, 1.0, 0]);
+      this.seg(g, [-1.0, v, 0], [1.0, v, 0]);
+    }
+    g.stroke();
+    g.strokeStyle = 'rgba(29,31,32,0.26)';
+    g.beginPath(); this.seg(g, [-1, 0, 0], [1, 0, 0]); this.seg(g, [0, -1, 0], [0, 1, 0]); g.stroke();
+
+    for (const o of this.obs) {
+      g.strokeStyle = 'rgba(29,31,32,0.45)'; g.lineWidth = 1;
+      g.beginPath(); this.ring(g, o.c, o.r, 0); this.ring(g, o.c, o.r, 1); this.ring(g, o.c, o.r, 2); g.stroke();
+      g.setLineDash([3, 4]);
+      g.strokeStyle = 'rgba(89,128,166,0.4)';
+      g.beginPath(); this.ring(g, o.c, o.r + this.TUBE, 0); g.stroke();
+      g.strokeStyle = 'rgba(29,31,32,0.16)';
+      g.beginPath(); this.ring(g, [o.c[0], o.c[1], 0], o.r, 0); this.seg(g, o.c, [o.c[0], o.c[1], 0]); g.stroke();
+      g.setLineDash([]);
+    }
+
+    // planned tool path
+    if (this.path && this.path.length > 1) {
+      g.strokeStyle = 'rgba(89,128,166,0.55)'; g.lineWidth = 1.2;
+      g.beginPath();
+      let first = true;
+      for (const P of this.path) {
+        const p = this.project(P);
+        if (!p) { first = true; continue; }
+        if (first) { g.moveTo(p.x, p.y); first = false; } else g.lineTo(p.x, p.y);
+      }
+      g.stroke();
+    }
+
+    // ghost poses along the trajectory
+    for (const s of [0, 0.25, 0.5, 0.75, 1]) {
+      this.arm(g, this.qAt(s), 'rgba(89,128,166,0.20)', 3);
+    }
+
+    // base plate
+    g.strokeStyle = 'rgba(29,31,32,0.5)'; g.lineWidth = 1;
+    g.beginPath(); this.ring(g, [0, 0, 0], 0.13, 0); this.ring(g, [0, 0, 0.02], 0.13, 0); g.stroke();
+
+    // live pose
+    const pts = this.arm(g, this.qAt(this.phase), accent, 5);
+    for (let i = 1; i < pts.length; i++) {
+      const p = this.project(pts[i]);
+      if (!p) continue;
+      g.fillStyle = '#f2f2f3'; g.strokeStyle = ink; g.lineWidth = 1.1;
+      g.beginPath(); g.arc(p.x, p.y, i === pts.length - 1 ? 3.5 : 4.5, 0, Math.PI * 2);
+      g.fill(); g.stroke();
+    }
+
+    // start / goal markers
+    const mark = (P, label, filled) => {
+      const sp = this.project(P);
+      if (!sp) return;
+      g.strokeStyle = ink; g.lineWidth = 1;
+      g.beginPath(); g.rect(sp.x - 6, sp.y - 6, 12, 12);
+      if (filled) { g.fillStyle = ink; g.fill(); } else g.stroke();
+      g.setLineDash([2, 4]); g.strokeStyle = 'rgba(29,31,32,0.3)';
+      g.beginPath(); this.seg(g, P, [P[0], P[1], 0]); g.stroke();
+      g.setLineDash([]);
+      g.fillStyle = ink; g.font = '600 10px "Barlow Condensed", sans-serif';
+      g.fillText(label, sp.x + 10, sp.y - 8);
+    };
+    mark(this.startP, 'START', true);
+    mark(this.goalP, 'GOAL', false);
+
+    g.fillStyle = 'rgba(29,31,32,0.45)';
+    g.font = '600 10px "Barlow Condensed", sans-serif';
+    g.fillText('UR5E · 6R · B-SPLINE DEG 5 · 12 CTRL', 10, this.H - 10);
+  }
+
+  renderVals() {
+    const page = this.state.page;
+    const col = (p) => page === p ? 'var(--color-accent)' : 'var(--color-text)';
+    return {
+      isHome: page === 'home',
+      isSolutions: page === 'solutions',
+      isAbout: page === 'about',
+      isNews: page === 'news',
+      isCareers: page === 'careers',
+      colSolutions: col('solutions'),
+      colAbout: col('about'),
+      colNews: col('news'),
+      colCareers: col('careers'),
+      goHome: this.go('home'),
+      navSolutions: this.go('solutions'),
+      navAbout: this.go('about'),
+      navNews: this.go('news'),
+      navCareers: this.go('careers'),
+      showProof: this.props.showProofStrip !== false,
+      randomize: (e) => { if (e) e.preventDefault(); this.userActive = true; this.scene(false); },
+      canvasRef: this.canvasRef,
+      wrapRef: this.wrapRef,
+      statusRef: this.statusRef,
+      tSolveRef: this.tSolveRef,
+      tIterRef: this.tIterRef,
+      tClearRef: this.tClearRef,
+      tErrRef: this.tErrRef
+    };
+  }
+}
+</script>
+</body>
+</html>

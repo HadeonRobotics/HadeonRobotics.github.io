@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f2f2f3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Hadeon Robotics | The Motion Engine</title>
+
+    <link rel="icon" type="image/svg+xml" href="/images/HadeonLogo.svg">
+    <link rel="apple-touch-icon" href="/images/HadeonLogo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-page="home">
+<div id="nav-mount"></div>
+
+<main>
+
+  <section style="border-bottom:1px solid var(--color-divider)">
+    <div class="container" style="padding-top:56px;padding-bottom:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,56px);align-items:center">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+          <span class="tag tag-outline" style="letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap">Motion engine</span>
+          <span style="font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent)">Deterministic · No-code</span>
+        </div>
+        <h1 style="font-size:clamp(52px,6vw,84px);line-height:0.98;letter-spacing:-0.02em;margin:0 0 20px">Teach goals.<br>Not waypoints.</h1>
+        <p style="font-size:21px;line-height:1.6;max-width:44ch;margin:0 0 28px;color:color-mix(in srgb, var(--color-text) 78%, transparent)">A deterministic motion engine that plans collision-free, near-time-optimal trajectories for any manipulator — from a goal, not a manual program.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px">
+          <a class="btn btn-primary" href="mailto:info@hadeonrobotics.com?subject=Demo%20Request" style="padding:12px 22px;font-size:19px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">
+            Book a demo
+          </a>
+          <a class="btn btn-secondary" href="/solutions.html" style="padding:12px 22px;font-size:19px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Read the spec</a>
+        </div>
+        <div class="divider-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(50%,110px),1fr));border-top:1px solid var(--color-divider);--gap-pad:16px">
+          <div>
+            <div style="font-family:var(--font-heading);font-size:36px;line-height:1;color:var(--color-accent-700)">34%</div>
+            <div style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-top:6px">Cycle-time improvement on a Kinova Link6</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:36px;line-height:1;color:var(--color-accent-700)">&lt;100<span style="font-size:20px">ms</span></div>
+            <div style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-top:6px">Replan latency<br>per goal</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:36px;line-height:1;color:var(--color-accent-700)">0</div>
+            <div style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-top:6px">Taught waypoints<br>to avoid obstacles</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive live planner (js/hero.js, js/blast-solver.js, js/wasm/) is
+           parked for now — the WASM/JS solver's default convergence isn't clean
+           enough to ship yet. Video only until that's resolved; the markup below
+           intentionally omits #hero-sim-panel/#hero-try so hero.js's canvas guard
+           (`if (!canvas) return`) makes it a no-op without deleting that work. -->
+      <figure class="hero-figure">
+        <div class="blueprint">
+          <div class="hero-canvas-wrap">
+            <video autoplay loop muted playsinline preload="metadata" style="display:block;width:100%;height:100%;object-fit:cover">
+              <source src="videos/robot-motion-silent-loop-compressed.mp4" type="video/mp4">
+            </video>
+          </div>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+        <figcaption style="margin-top:12px">
+          <span>A UR5e running a BLAST-planned trajectory — near-time-optimal, jerk-smooth motion that respects every kinematic, dynamic and clearance constraint in the cell.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid var(--color-divider)">
+    <div class="container" style="padding-top:64px;padding-bottom:64px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(28px,4vw,56px);align-items:start">
+        <div>
+          <h6 style="color:var(--color-accent-700);margin:0 0 10px">The Engine</h6>
+          <h2 style="font-size:46px;line-height:1.02;margin:0 0 12px">Four guarantees,<br>not four features</h2>
+          <p style="font-size:19px;color:color-mix(in srgb, var(--color-text) 65%, transparent);max-width:32ch">Every guarantee here is a property of the math, provable before the robot moves.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-divider)">
+          <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px 24px;padding:20px 0;border-bottom:1px solid var(--color-divider)">
+            <span style="font-family:var(--font-heading);font-size:16px;color:var(--color-accent);letter-spacing:0.08em">01</span>
+            <div>
+              <h4 style="margin:0 0 8px;font-size:23px">Goal-Based Deployment</h4>
+              <p style="margin:0;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Define the task. The engine generates a collision-free performant motion. No manual waypoints.</p>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px 24px;padding:20px 0;border-bottom:1px solid var(--color-divider)">
+            <span style="font-family:var(--font-heading);font-size:16px;color:var(--color-accent);letter-spacing:0.08em">02</span>
+            <div>
+              <h4 style="margin:0 0 8px;font-size:23px">Certifiable Safety</h4>
+              <p style="margin:0;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Clearance, kinematics, dynamics, TCP speed and your process-specific constraints are all hard constraints in the optimization — an auditable proof, not a learned behaviour.</p>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px 24px;padding:20px 0;border-bottom:1px solid var(--color-divider)">
+            <span style="font-family:var(--font-heading);font-size:16px;color:var(--color-accent);letter-spacing:0.08em">03</span>
+            <div>
+              <h4 style="margin:0 0 8px;font-size:23px">Real-Time Near-Optimal Motion</h4>
+              <p style="margin:0;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Smooth trajectories at the robot's limits, execution-ready on the first pass.</p>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px 24px;padding:20px 0">
+            <span style="font-family:var(--font-heading);font-size:16px;color:var(--color-accent);letter-spacing:0.08em">04</span>
+            <div>
+              <h4 style="margin:0 0 8px;font-size:23px">Vendor Freedom</h4>
+              <p style="margin:0;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">URDF in, motion out. The same engine moves from Kinova to UR — new arms onboarded on request.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-neutral-200) 45%, transparent)">
+    <div class="container" style="padding-top:64px;padding-bottom:64px">
+      <h6 style="color:var(--color-accent-700);margin:0 0 10px">Differentiators</h6>
+      <h2 style="font-size:46px;margin:0 0 12px">What the engine gets right</h2>
+      <p style="margin:0 0 28px;font-size:19px;max-width:44ch;color:color-mix(in srgb, var(--color-text) 65%, transparent)">Deterministic, auditable, no-code — the properties that matter once a robot is running in your cell.</p>
+      <div class="divider-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));border-top:1px solid var(--color-text)">
+        <div>
+          <h4 style="margin:0 0 8px;font-size:21px">Deterministic, Not Stochastic</h4>
+          <p style="margin:0;font-size:16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Bit-identical output for the same input, every time — no seed-dependent variance.</p>
+        </div>
+        <div>
+          <h4 style="margin:0 0 8px;font-size:21px">Near-Time-Optimal, Execution-Ready</h4>
+          <p style="margin:0;font-size:16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Smooth, high-quality paths straight out of the solver.</p>
+        </div>
+        <div>
+          <h4 style="margin:0 0 8px;font-size:21px">No-Code Setup</h4>
+          <p style="margin:0;font-size:16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Import a model — no manual programming, no training data.</p>
+        </div>
+        <div>
+          <h4 style="margin:0 0 8px;font-size:21px">Explainable Math</h4>
+          <p style="margin:0;font-size:16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Every trajectory is auditable and certifiable, not a black box.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid var(--color-divider)">
+    <div class="container" style="padding-top:64px;padding-bottom:64px">
+      <h6 style="color:var(--color-accent-700);margin:0 0 10px">Solutions</h6>
+      <h2 style="font-size:46px;margin:0 0 28px">Two ways in</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px">
+        <div class="card blueprint" style="padding:28px">
+          <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">For system integrators</div>
+          <h3 style="margin:6px 0 10px;font-size:31px">Fixed-Bid Timelines, Dynamic Cells</h3>
+          <p style="margin:0 0 18px;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Deploy high-mix cells at a flat cost per cell.</p>
+          <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;font-size:19px">
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>URDF / CAD / STEP ingest builds the cell model</span></li>
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>Layout changes absorbed on the fly</span></li>
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>One robot model, onboarded once — reused on every future deployment</span></li>
+          </ul>
+          <a class="btn btn-secondary" href="mailto:info@hadeonrobotics.com?subject=Integrator%20Partnership%20Inquiry" style="margin-top:auto;align-self:flex-start;padding:10px 18px;font-size:16px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Partner with Hadeon</a>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+        <div class="card blueprint" style="padding:28px">
+          <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">For robot OEMs</div>
+          <h3 style="margin:6px 0 10px;font-size:31px">A Motion Layer from Day One</h3>
+          <p style="margin:0 0 18px;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">You built the mechanics. We prove what they can do — from day one.</p>
+          <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;font-size:19px">
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>Show full reach and agility on day one</span></li>
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>Ship with a motion stack that rivals the incumbents</span></li>
+            <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span>Near-time-optimal trajectories as a spec-sheet number</span></li>
+          </ul>
+          <a class="btn btn-secondary" href="mailto:info@hadeonrobotics.com?subject=OEM%20Partnership%20Inquiry" style="margin-top:auto;align-self:flex-start;padding:10px 18px;font-size:16px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Integrate the engine</a>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-neutral-200) 45%, transparent)">
+    <div class="container" style="padding-top:64px;padding-bottom:64px">
+      <h6 style="color:var(--color-accent-700);margin:0 0 10px">Roadmap</h6>
+      <h2 style="font-size:46px;margin:0 0 32px">From static cells to shared floors</h2>
+      <div class="divider-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));border-top:1px solid var(--color-text);--gap-pad:24px">
+        <div style="position:relative;--dot-x:0">
+          <div style="position:absolute;top:-4px;left:var(--dot-x);width:7px;height:7px;background:var(--color-accent)"></div>
+          <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.16em;color:var(--color-accent-700);margin-bottom:10px">NOW · SHIPPING</div>
+          <h4 style="margin:0 0 8px;font-size:25px">Static Scene Generation</h4>
+          <p style="margin:0;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Automated trajectory generation and collision avoidance for static scenes, with scene, task, and robot reconfigurable on the fly. Dynamic obstacles are next.</p>
+        </div>
+        <div style="position:relative;--dot-x:24px">
+          <div style="position:absolute;top:-4px;left:var(--dot-x);width:7px;height:7px;border:1px solid var(--color-accent)"></div>
+          <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.16em;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:10px">NEXT · IN DEV</div>
+          <h4 style="margin:0 0 8px;font-size:25px">Dynamic Replanning</h4>
+          <p style="margin:0;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Real-time response to moving machinery and live process change.</p>
+        </div>
+        <div style="position:relative;--dot-x:24px">
+          <div style="position:absolute;top:-4px;left:var(--dot-x);width:7px;height:7px;border:1px solid color-mix(in srgb, var(--color-text) 40%, transparent)"></div>
+          <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.16em;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:10px">FUTURE · RESEARCH</div>
+          <h4 style="margin:0 0 8px;font-size:25px">Predictive Coexistence</h4>
+          <p style="margin:0;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Anticipating human movement for fenceless cells with uninterrupted cycles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid var(--color-divider)">
+    <div class="container divider-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))">
+      <div>
+        <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:6px">Validated</div>
+        <div style="font-size:19px;line-height:1.4">Measured on real hardware, not simulation</div>
+      </div>
+      <div>
+        <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:6px">Research</div>
+        <div style="font-size:19px;line-height:1.4">Joint algorithm development with Dynamium Lab</div>
+      </div>
+      <div>
+        <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:6px">Open source</div>
+        <div style="font-size:19px;line-height:1.4">Built on <a href="https://github.com/Dynamium-Lab/blast" target="_blank" rel="noopener">BLAST</a>, our co-maintained motion library</div>
+      </div>
+      <div>
+        <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:6px">Published</div>
+        <div style="font-size:19px;line-height:1.4">Peer-reviewed work behind the solver; grant-funded R&amp;D</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--color-accent-900);color:var(--color-bg)">
+    <div class="container" style="padding-top:72px;padding-bottom:72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+      <div>
+        <h2 style="font-size:52px;line-height:1.02;margin:0 0 14px;color:var(--color-bg)">Bring us a cell.<br>We'll plan it live.</h2>
+        <p style="margin:0;font-size:20px;color:color-mix(in srgb, #ffffff 72%, transparent);max-width:46ch">Send us a cell layout. We'll walk the trajectory through with you in a live simulation session — collision-free motion and the cycle-time delta included.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+        <a class="btn" href="mailto:info@hadeonrobotics.com?subject=Demo%20Request" style="background:var(--color-bg);color:var(--color-accent-900);border-color:var(--color-bg);padding:14px 26px;font-size:19px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">
+          Book a demo
+        </a>
+        <span style="font-size:16px;color:color-mix(in srgb, #ffffff 60%, transparent)">or email <a href="mailto:info@hadeonrobotics.com" style="color:var(--color-accent-300)">info@hadeonrobotics.com</a></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-mount"></div>
+<script src="/js/components.js"></script>
+<script src="/js/hero.js"></script>
+</body>
+</html>

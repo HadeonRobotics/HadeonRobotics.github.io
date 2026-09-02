@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Hadeon attends VivaTech 2026",
+    "date": "June 2026",
+    "summary": "Nikos represented Hadeon at VivaTech in Paris, one of Europe's largest technology and innovation events.",
+    "slug": "vivatech-2026"
+  },
+  {
+    "title": "Core technology accepted to ICRA 2026",
+    "date": "June 2026",
+    "summary": "Hadeon's trajectory-optimization research was accepted and presented at ICRA 2026, one of robotics' most prestigious academic venues.",
+    "slug": "icra-submission"
+  },
+  {
+    "title": "Hadeon attends SaaS North 2025",
+    "date": "October 2025",
+    "summary": "Nikos represented Hadeon at SaaS North as part of the Startup Atlantic cohort, connecting with founders and investors across the Canadian tech ecosystem.",
+    "slug": "saas-north-2025"
+  },
+  {
+    "title": "Hadeon secures $195,000 in Mitacs R&D funding",
+    "date": "January 2025",
+    "summary": "Mitacs Accelerate and Business Strategy Internship grants fund the buildout of Hadeon's core development team.",
+    "slug": "mitacs-funding"
+  },
+  {
+    "title": "Hadeon forms R&D partnership with Dynamium Lab",
+    "date": "September 2024",
+    "summary": "The partnership gives Hadeon access to advanced test facilities and a pipeline of Atlantic Canadian robotics talent.",
+    "slug": "dynamium-lab-partnership"
+  },
+  {
+    "title": "Hadeon Robotics is founded",
+    "date": "August 2024",
+    "summary": "Incorporated and selected for the Venn Innovation Garage, Hadeon begins building a no-code motion-planning engine.",
+    "slug": "hadeon-founded"
+  }
+]

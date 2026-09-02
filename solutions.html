@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f2f2f3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Solutions & Demos | Hadeon Robotics</title>
+    <link rel="icon" type="image/svg+xml" href="/images/HadeonLogo.svg">
+    <link rel="apple-touch-icon" href="/images/HadeonLogo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-page="solutions">
+<div id="nav-mount"></div>
+
+<main>
+  <section style="border-bottom:1px solid var(--color-divider)">
+    <div class="container" style="padding:64px clamp(20px,4vw,32px) 48px">
+      <h6 style="color:var(--color-accent-700);margin:0 0 12px">Solutions</h6>
+      <h1 style="font-size:clamp(44px,5.2vw,68px);line-height:1;margin:0 0 16px;max-width:20ch">The motion layer between your cell and your robot</h1>
+      <p style="font-size:21px;max-width:56ch;margin:0;color:color-mix(in srgb, var(--color-text) 75%, transparent)">One engine, two entry points: integrators deploying cells, and OEMs shipping hardware that needs motion out of the box.</p>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-neutral-200) 45%, transparent)">
+    <div class="container" style="padding:56px clamp(20px,4vw,32px)">
+      <h2 style="font-size:40px;margin:0 0 24px">Deployment sequence</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:24px">
+        <div style="border-top:1px solid var(--color-text);padding-top:14px">
+          <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.14em;color:var(--color-accent);margin-bottom:8px">STEP 01</div>
+          <h4 style="margin:0 0 6px;font-size:22px">Ingest</h4>
+          <p style="margin:0;font-size:16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">URDF, CAD or STEP files build the robot and cell model.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-text);padding-top:14px">
+          <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.14em;color:var(--color-accent);margin-bottom:8px">STEP 02</div>
+          <h4 style="margin:0 0 6px;font-size:22px">Reconcile</h4>
+          <p style="margin:0;font-size:16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Have a CAD model, STEP file or your own point-cloud scan? We reconcile it with the real floor layout.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-text);padding-top:14px">
+          <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.14em;color:var(--color-accent);margin-bottom:8px">STEP 03</div>
+          <h4 style="margin:0 0 6px;font-size:22px">Set Goals</h4>
+          <p style="margin:0;font-size:16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Pick poses and task order. No waypoints, no pendant.</p>
+        </div>
+        <div style="border-top:1px solid var(--color-text);padding-top:14px">
+          <div style="font-family:var(--font-heading);font-size:15px;letter-spacing:0.14em;color:var(--color-accent);margin-bottom:8px">STEP 04</div>
+          <h4 style="margin:0 0 6px;font-size:22px">Execute</h4>
+          <p style="margin:0;font-size:16px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Verified trajectories stream to the controller with clearance proofs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid var(--color-divider)">
+    <div class="container" style="padding:56px clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px">
+      <div class="card blueprint" style="padding:28px">
+        <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">For system integrators</div>
+        <h3 style="margin:6px 0 10px;font-size:31px">Deploy Dynamic Automation on Fixed-Bid Timelines</h3>
+        <p style="margin:0 0 18px;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Your engineering talent is the constraint. The engine is the force multiplier that turns the linear cost of manual programming into a flat cost per cell.</p>
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:12px;font-size:19px">
+          <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Accelerated deployment.</strong> Model generation from existing engineering files.</span></li>
+          <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Adaptive setup.</strong> Client scope changes stop being schedule risk.</span></li>
+          <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Model reuse.</strong> Onboard a robot's collision model once — every future deployment on that arm is instant.</span></li>
+        </ul>
+        <a class="btn btn-primary" href="mailto:info@hadeonrobotics.com?subject=Integrator%20Partnership%20Inquiry" style="align-self:flex-start;padding:11px 20px;font-size:16px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Partner with Hadeon</a>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+      <div class="card blueprint" style="padding:28px">
+        <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">For robot OEMs</div>
+        <h3 style="margin:6px 0 10px;font-size:31px">Launch Market-Ready Robots From Day One</h3>
+        <p style="margin:0 0 18px;font-size:19px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">You have built world-class mechanics. We supply the intelligent motion layer that proves the hardware's capability from day one.</p>
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:12px;font-size:19px">
+          <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Instant validation.</strong> Full range and agility, demonstrated immediately.</span></li>
+          <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Market-ready launch.</strong> A motion stack that shortens time-to-market.</span></li>
+          <li style="display:flex;gap:12px"><span style="color:var(--color-accent);font-family:var(--font-heading)">→</span><span><strong>Peak performance.</strong> Near-time-optimal trajectories, measurable on the spec sheet.</span></li>
+        </ul>
+        <a class="btn btn-primary" href="mailto:info@hadeonrobotics.com?subject=OEM%20Partnership%20Inquiry" style="align-self:flex-start;padding:11px 20px;font-size:16px;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap">Integrate the engine</a>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:color-mix(in srgb, var(--color-neutral-200) 45%, transparent)">
+    <div class="container" style="padding:56px clamp(20px,4vw,32px)">
+      <h2 style="font-size:40px;margin:0 0 20px">Interfaces</h2>
+      <div class="blueprint" style="background:var(--color-bg);padding:8px 16px">
+        <div style="overflow-x:auto">
+          <table class="table">
+            <thead><tr><th style="width:26%">Layer</th><th>Supported today</th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:500">Robot models</td><td class="text-muted">URDF import, auto-generated kinematics — collision model tuned once per new robot</td></tr>
+              <tr><td style="font-weight:500">Supported manipulators</td><td class="text-muted">Kinova Link6, Kinova Gen3, UR5e — validated on hardware; Fanuc CRX25 in simulation only</td></tr>
+              <tr><td style="font-weight:500">Perception</td><td class="text-muted">CAD, STEP and point-cloud import to planning primitives — in-house scanning not yet available</td></tr>
+              <tr><td style="font-weight:500">Core library</td><td class="text-muted">BLAST — open-source, co-maintained with Dynamium Lab</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </div>
+      <p style="margin:16px 0 0;font-size:16px;color:color-mix(in srgb, var(--color-text) 65%, transparent)">Don't see your robot? <a href="mailto:info@hadeonrobotics.com?subject=Robot%20Support%20Inquiry">Send us an inquiry</a> and we'll set it up.</p>
+    </div>
+  </section>
+</main>
+
+<div id="footer-mount"></div>
+<script src="/js/components.js"></script>
+</body>
+</html>

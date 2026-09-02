@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f2f2f3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Core technology accepted to ICRA 2026 | Hadeon Robotics News</title>
+    <link rel="icon" type="image/svg+xml" href="/images/HadeonLogo.svg">
+    <link rel="apple-touch-icon" href="/images/HadeonLogo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-page="news">
+<div id="nav-mount"></div>
+
+<main>
+  <section style="border-bottom:1px solid var(--color-divider)">
+    <div class="container" style="padding:64px clamp(20px,4vw,32px) 40px;max-width:760px">
+      <div style="font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:12px">June 2026</div>
+      <h1 style="font-size:clamp(36px,4.6vw,52px);line-height:1.1;margin:0">Core technology accepted to ICRA 2026</h1>
+    </div>
+  </section>
+  <section>
+    <div class="container" style="padding:48px clamp(20px,4vw,32px) 80px;max-width:760px">
+      <article class="post-body">
+        <p>Hadeon's paper, <strong>"Accelerating Trajectory Optimization by Exploiting B-Spline Gradient Structure"</strong> — co-authored by Nikos Doiron, Thomas Duquette, Gilde Vanel Tchane Djogdom and André Gallant — was accepted to <strong>ICRA 2026</strong>, the IEEE International Conference on Robotics and Automation, one of the field's most competitive academic venues. Doiron and Gallant presented the work at the conference.</p>
+        <p>The paper details the gradient-computation techniques behind BLAST's speed: exploiting the local support of B-splines to skip unnecessary gradient evaluations, replacing finite-difference approximations with closed-form derivatives, and aggregating constraints per knot-span to shrink the optimization problem. Tested on a simulated UR5e across 64 tasks in a cluttered workspace, the combined techniques cut computation time by <strong>up to 96.3% — a 26.9x speedup</strong> — over a finite-difference baseline, with no loss of trajectory quality, success rate, or fidelity to the kinematic, dynamic and collision constraints.</p>
+        <p>Getting the work in front of the academic community was a deliberate step — a motion-planning engine selling on the promise of provable safety should have its core math held to peer-review standard, not just marketing copy. The paper's data and code are public on <a href="https://github.com/Dynamium-Lab/blast" target="_blank" rel="noopener">BLAST's repository</a>, the same open-source library behind the engine.</p>
+        <p style="color:color-mix(in srgb, var(--color-text) 65%, transparent);font-size:19px">A link to the published paper will be added here once it's out.</p>
+      </article>
+      <a href="/news.html" style="display:inline-flex;align-items:center;gap:8px;margin-top:40px;font-family:var(--font-heading);font-size:16px;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;color:var(--color-text)">← Back to news</a>
+    </div>
+  </section>
+</main>
+
+<div id="footer-mount"></div>
+<script src="/js/components.js"></script>
+</body>
+</html>
